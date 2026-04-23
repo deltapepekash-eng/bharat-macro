@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BHARAT·MACRO — Economic Intelligence Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<style>
+  :root {
+    --bg: #0a0b0e;
+    --bg2: #111318;
+    --bg3: #181b22;
+    --bg4: #1e2230;
+    --border: rgba(255,255,255,0.07);
+    --border2: rgba(255,255,255,0.12);
+    --text: #e8eaf0;
+    --text2: #8b91a8;
+    --text3: #545b72;
+    --green: #22c55e;
+    --green-bg: rgba(34,197,94,0.1);
+    --red: #ef4444;
+    --red-bg: rgba(239,68,68,0.1);
+    --amber: #f59e0b;
+    --amber-bg: rgba(245,158,11,0.1);
+    --blue: #60a5fa;
+    --blue-bg: rgba(96,165,250,0.1);
+    --accent: #6366f1;
+    --accent-bg: rgba(99,102,241,0.12);
+    --mono: 'DM Mono', monospace;
+    --sans: 'Syne', sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 13px; line-height: 1.5; min-height: 100vh; }
+
+  /* HEADER */
+  .topbar { display: flex; align-items: center; justify-content: space-between; padding: 14px 24px; border-bottom: 1px solid var(--border); background: var(--bg2); position: sticky; top: 0; z-index: 100; }
+  .logo { font-family: var(--mono); font-size: 14px; font-weight: 500; letter-spacing: 0.1em; color: var(--text); }
+  .logo span { color: var(--accent); }
+  .topbar-right { display: flex; align-items: center; gap: 16px; }
+  .live-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); animation: blink 2s infinite; }
+  @keyframes blink { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
+  .ts { font-family: var(--mono); font-size: 11px; color: var(--text3); }
+  .refresh-btn { font-family: var(--mono); font-size: 11px; color: var(--text2); background: var(--bg3); border: 1px solid var(--border2); padding: 4px 10px; border-radius: 4px; cursor: pointer; }
+  .refresh-btn:hover { color: var(--text); border-color: var(--accent); }
+
+  /* REGIME BAR */
+  .regime-bar { display: flex; align-items: center; justify-content: space-between; padding: 10px 24px; background: var(--bg2); border-bottom: 1px solid var(--border); }
+  .regime-label { font-family: var(--mono); font-size: 10px; color: var(--text3); letter-spacing: 0.1em; }
+  .regime-signal { display: flex; align-items: center; gap: 10px; }
+  .regime-pill { font-family: var(--mono); font-size: 12px; font-weight: 500; padding: 4px 14px; border-radius: 20px; letter-spacing: 0.05em; }
+  .regime-neutral { background: var(--amber-bg); color: var(--amber); border: 1px solid rgba(245,158,11,0.3); }
+  .regime-risk-on { background: var(--green-bg); color: var(--green); border: 1px solid rgba(34,197,94,0.3); }
+  .regime-risk-off { background: var(--red-bg); color: var(--red); border: 1px solid rgba(239,68,68,0.3); }
+  .regime-text { font-size: 12px; color: var(--text2); }
+  .regime-score { font-family: var(--mono); font-size: 12px; }
+  .signals-mini { display: flex; gap: 6px; }
+  .sig-dot { width: 8px; height: 8px; border-radius: 50%; }
+
+  /* MAIN LAYOUT */
+  .main { padding: 20px 24px; max-width: 1400px; margin: 0 auto; }
+
+  /* SECTION */
+  .section-hdr { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; margin-top: 20px; }
+  .section-hdr:first-child { margin-top: 0; }
+  .section-title { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; color: var(--text3); text-transform: uppercase; }
+  .section-line { flex: 1; height: 1px; background: var(--border); }
+
+  /* GRIDS */
+  .g4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 10px; }
+  .g3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 10px; }
+  .g2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 10px; }
+  .g6 { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; margin-bottom: 10px; }
+
+  /* INDICATOR CARD */
+  .icard { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; cursor: pointer; transition: border-color 0.15s, background 0.15s; position: relative; overflow: hidden; }
+  .icard:hover { border-color: var(--border2); background: var(--bg3); }
+  .icard.warn { border-color: rgba(245,158,11,0.4); background: rgba(245,158,11,0.04); }
+  .icard.danger { border-color: rgba(239,68,68,0.35); background: rgba(239,68,68,0.04); }
+  .icard.good { border-color: rgba(34,197,94,0.3); background: rgba(34,197,94,0.03); }
+  .icard.selected { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+
+  .icard-top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 6px; }
+  .icard-name { font-size: 10px; color: var(--text3); letter-spacing: 0.04em; font-family: var(--mono); }
+  .icard-badge { font-size: 9px; font-weight: 500; padding: 2px 6px; border-radius: 3px; font-family: var(--mono); }
+  .badge-g { background: var(--green-bg); color: var(--green); }
+  .badge-r { background: var(--red-bg); color: var(--red); }
+  .badge-a { background: var(--amber-bg); color: var(--amber); }
+  .badge-b { background: var(--blue-bg); color: var(--blue); }
+
+  .icard-value { font-family: var(--mono); font-size: 22px; font-weight: 500; color: var(--text); line-height: 1; margin-bottom: 4px; }
+  .icard-unit { font-size: 12px; color: var(--text3); font-weight: 400; }
+  .icard-change { font-family: var(--mono); font-size: 11px; margin-bottom: 8px; }
+  .icard-change.up { color: var(--green); }
+  .icard-change.down { color: var(--red); }
+  .icard-change.flat { color: var(--text3); }
+
+  /* BENCHMARK BAR */
+  .bench-wrap { margin-top: 6px; }
+  .bench-label { display: flex; justify-content: space-between; font-family: var(--mono); font-size: 9px; color: var(--text3); margin-bottom: 3px; }
+  .bench-track { height: 4px; background: var(--bg4); border-radius: 2px; position: relative; }
+  .bench-zones { position: absolute; top: 0; left: 0; right: 0; bottom: 0; display: flex; border-radius: 2px; overflow: hidden; }
+  .zone-g { background: rgba(34,197,94,0.25); }
+  .zone-a { background: rgba(245,158,11,0.25); }
+  .zone-r { background: rgba(239,68,68,0.25); }
+  .bench-needle { position: absolute; top: -3px; width: 2px; height: 10px; background: white; border-radius: 1px; transform: translateX(-50%); }
+
+  .icard-footer { font-size: 9px; color: var(--text3); font-family: var(--mono); margin-top: 6px; }
+  .icard-warn-text { font-size: 9px; color: var(--amber); font-family: var(--mono); margin-top: 4px; }
+  .icard-danger-text { font-size: 9px; color: var(--red); font-family: var(--mono); margin-top: 4px; }
+
+  /* CHART PANEL */
+  .chart-panel { background: var(--bg2); border: 1px solid var(--border2); border-radius: 10px; padding: 20px 24px; margin-bottom: 10px; display: none; }
+  .chart-panel.active { display: block; }
+  .chart-hdr { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 16px; }
+  .chart-title { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 2px; }
+  .chart-subtitle { font-size: 11px; color: var(--text2); font-family: var(--mono); }
+  .chart-close { font-family: var(--mono); font-size: 11px; color: var(--text3); cursor: pointer; background: var(--bg3); border: 1px solid var(--border); padding: 3px 10px; border-radius: 4px; }
+  .chart-close:hover { color: var(--red); border-color: var(--red); }
+  .chart-meta { display: flex; gap: 20px; margin-bottom: 14px; }
+  .chart-meta-item { font-family: var(--mono); font-size: 10px; }
+  .chart-meta-label { color: var(--text3); }
+  .chart-meta-val { color: var(--text); font-weight: 500; }
+  .chart-meta-val.warn { color: var(--amber); }
+  .chart-meta-val.danger { color: var(--red); }
+  .chart-meta-val.good { color: var(--green); }
+  .chart-canvas-wrap { position: relative; height: 200px; }
+
+  /* AI PANEL */
+  .ai-panel { background: var(--bg2); border: 1px solid var(--accent); border-radius: 10px; overflow: hidden; margin-bottom: 10px; }
+  .ai-hdr { display: flex; align-items: center; justify-content: space-between; padding: 12px 18px; border-bottom: 1px solid var(--border); background: var(--accent-bg); }
+  .ai-hdr-left { display: flex; align-items: center; gap: 8px; }
+  .ai-icon { font-size: 14px; }
+  .ai-title { font-family: var(--mono); font-size: 11px; font-weight: 500; color: var(--text); letter-spacing: 0.06em; }
+  .ai-run-btn { font-family: var(--mono); font-size: 11px; background: var(--accent); color: white; border: none; padding: 5px 14px; border-radius: 4px; cursor: pointer; }
+  .ai-run-btn:hover { background: #818cf8; }
+  .ai-run-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+  .ai-body { padding: 18px; }
+  .ai-content { font-size: 13px; color: var(--text2); line-height: 1.7; white-space: pre-wrap; }
+  .ai-placeholder { font-family: var(--mono); font-size: 11px; color: var(--text3); text-align: center; padding: 20px; }
+  .ai-signal-row { display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap; }
+  .ai-signal-chip { font-family: var(--mono); font-size: 11px; font-weight: 500; padding: 5px 14px; border-radius: 20px; }
+  .chip-buy { background: rgba(34,197,94,0.15); color: var(--green); border: 1px solid rgba(34,197,94,0.3); }
+  .chip-sell { background: rgba(239,68,68,0.15); color: var(--red); border: 1px solid rgba(239,68,68,0.3); }
+  .chip-hold { background: rgba(245,158,11,0.15); color: var(--amber); border: 1px solid rgba(245,158,11,0.3); }
+  .chip-neutral { background: var(--bg3); color: var(--text2); border: 1px solid var(--border2); }
+
+  /* FLOW TABLE */
+  .flow-table { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; margin-bottom: 10px; }
+  .flow-row { display: flex; align-items: center; padding: 9px 14px; border-bottom: 1px solid var(--border); gap: 10px; }
+  .flow-row:last-child { border-bottom: none; }
+  .flow-name { font-family: var(--mono); font-size: 11px; color: var(--text2); flex: 1; }
+  .flow-val { font-family: var(--mono); font-size: 12px; font-weight: 500; }
+  .flow-bar-wrap { flex: 1; height: 3px; background: var(--bg4); border-radius: 2px; overflow: hidden; }
+  .flow-bar { height: 100%; border-radius: 2px; }
+  .flow-signal { font-family: var(--mono); font-size: 9px; padding: 2px 7px; border-radius: 3px; }
+
+  /* ALERTS */
+  .alerts-panel { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; margin-bottom: 10px; overflow: hidden; }
+  .alert-item { display: flex; align-items: flex-start; gap: 10px; padding: 10px 14px; border-bottom: 1px solid var(--border); }
+  .alert-item:last-child { border-bottom: none; }
+  .alert-icon { font-size: 12px; margin-top: 1px; }
+  .alert-text { font-size: 11px; color: var(--text2); line-height: 1.5; }
+  .alert-text strong { color: var(--text); }
+
+  /* SCROLLBAR */
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--bg4); border-radius: 2px; }
+
+  /* BUFFETT METER */
+  .buffett-card { background: var(--bg2); border: 1px solid rgba(245,158,11,0.3); border-radius: 8px; padding: 14px; background: rgba(245,158,11,0.04); }
+  .buffett-title { font-family: var(--mono); font-size: 10px; color: var(--amber); letter-spacing: 0.08em; margin-bottom: 8px; }
+  .buffett-meter { position: relative; height: 18px; background: var(--bg4); border-radius: 9px; overflow: hidden; margin-bottom: 6px; }
+  .buffett-fill { height: 100%; background: linear-gradient(to right, #22c55e 0%, #22c55e 40%, #f59e0b 40%, #f59e0b 70%, #ef4444 70%, #ef4444 100%); opacity: 0.8; border-radius: 9px; width: 100%; }
+  .buffett-needle-wrap { position: absolute; top: 0; bottom: 0; left: 82%; display: flex; align-items: center; }
+  .buffett-needle { width: 2px; height: 100%; background: white; }
+  .buffett-labels { display: flex; justify-content: space-between; font-family: var(--mono); font-size: 9px; color: var(--text3); }
+  .buffett-reading { font-family: var(--mono); font-size: 20px; font-weight: 500; color: var(--amber); margin: 4px 0 2px; }
+  .buffett-verdict { font-size: 10px; color: var(--amber); }
+
+  /* TOOLTIP */
+  .tooltip { display: none; position: fixed; z-index: 1000; background: var(--bg3); border: 1px solid var(--border2); border-radius: 6px; padding: 8px 12px; font-family: var(--mono); font-size: 11px; color: var(--text2); pointer-events: none; max-width: 220px; line-height: 1.5; }
+
+  /* LOADING */
+  .ai-loader { display: inline-block; width: 12px; height: 12px; border: 2px solid var(--border2); border-top-color: var(--accent); border-radius: 50%; animation: spin 0.8s linear infinite; vertical-align: middle; margin-right: 6px; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="logo">BHARAT<span>·</span>MACRO</div>
+  <div class="topbar-right">
+    <div class="live-dot"></div>
+    <span class="ts" id="ts">23 Apr 2026 · 09:15 IST</span>
+    <button class="refresh-btn" onclick="refreshAll()">↻ Refresh</button>
+  </div>
+</div>
+
+<!-- REGIME BAR -->
+<div class="regime-bar">
+  <span class="regime-label">MACRO REGIME</span>
+  <div class="regime-signal">
+    <span class="regime-pill regime-neutral" id="regime-pill">CAUTIOUSLY NEUTRAL</span>
+    <span class="regime-text" id="regime-text">Mixed signals — domestic strong, global headwinds</span>
+  </div>
+  <div class="signals-mini" id="signals-mini"></div>
+  <span class="regime-score" id="regime-score" style="color:var(--amber)">Score: 54/100</span>
+</div>
+
+<div class="main">
+
+  <!-- AI PANEL -->
+  <div class="ai-panel">
+    <div class="ai-hdr">
+      <div class="ai-hdr-left">
+        <span class="ai-icon">◈</span>
+        <span class="ai-title">MACRO INTELLIGENCE · AI ANALYSIS</span>
+      </div>
+      <button class="ai-run-btn" id="ai-btn" onclick="runAI()">▶ Generate Analysis</button>
+    </div>
+    <div class="ai-body">
+      <div class="ai-content" id="ai-content">
+        <div class="ai-placeholder">Click "Generate Analysis" to get AI-powered buy/sell/hold signals and macro regime interpretation based on current indicator readings.</div>
+      </div>
+      <div class="ai-signal-row" id="ai-signals" style="display:none"></div>
+    </div>
+  </div>
+
+  <!-- ALERTS -->
+  <div id="alerts-section"></div>
+
+  <!-- CHART PANEL (hidden by default) -->
+  <div class="chart-panel" id="chart-panel">
+    <div class="chart-hdr">
+      <div>
+        <div class="chart-title" id="chart-title">—</div>
+        <div class="chart-subtitle" id="chart-subtitle">—</div>
+      </div>
+      <button class="chart-close" onclick="closeChart()">✕ Close</button>
+    </div>
+    <div class="chart-meta" id="chart-meta"></div>
+    <div class="chart-canvas-wrap"><canvas id="trendChart" role="img" aria-label="Historical trend chart"></canvas></div>
+  </div>
+
+  <!-- INDIA MACRO -->
+  <div class="section-hdr"><span class="section-title">India — Growth & Inflation</span><div class="section-line"></div></div>
+  <div class="g4" id="india-growth"></div>
+
+  <div class="section-hdr"><span class="section-title">Monetary Policy — RBI</span><div class="section-line"></div></div>
+  <div class="g4" id="rbi-panel"></div>
+
+  <div class="section-hdr"><span class="section-title">Fiscal & Flows</span><div class="section-line"></div></div>
+  <div class="g4" id="fiscal-panel"></div>
+
+  <!-- MARKET INTERNALS -->
+  <div class="section-hdr"><span class="section-title">Market Internals & Valuation</span><div class="section-line"></div></div>
+  <div class="g3">
+    <div class="g3" id="market-internals" style="grid-column: span 2;"></div>
+    <div class="buffett-card" id="buffett-card" onclick="openCard('buffett_indicator')">
+      <div class="buffett-title">⚠ BUFFETT INDICATOR (India)</div>
+      <div class="buffett-reading" id="buffett-val">82%</div>
+      <div class="buffett-verdict" id="buffett-verdict">Mildly Overvalued — proceed with caution</div>
+      <div class="buffett-meter">
+        <div class="buffett-fill"></div>
+        <div class="buffett-needle-wrap" id="buffett-needle"><div class="buffett-needle"></div></div>
+      </div>
+      <div class="buffett-labels"><span>Undervalued<br>&lt;55%</span><span>Fair<br>55–75%</span><span>Overvalued<br>&gt;75%</span></div>
+      <div class="icard-footer" style="margin-top:8px">MCap-to-GDP · Click for trend ↗</div>
+    </div>
+  </div>
+
+  <!-- FII/DII FLOWS -->
+  <div class="section-hdr"><span class="section-title">FII / DII Capital Flows</span><div class="section-line"></div></div>
+  <div class="g2" id="flows-section"></div>
+
+  <!-- GLOBAL -->
+  <div class="section-hdr"><span class="section-title">Global — Rates, Commodities & Liquidity</span><div class="section-line"></div></div>
+  <div class="g4" id="global-panel"></div>
+
+  <div class="section-hdr"><span class="section-title">Global Activity — PMI & Leading Indicators</span><div class="section-line"></div></div>
+  <div class="g4" id="pmi-panel"></div>
+
+</div>
+
+<div class="tooltip" id="tooltip"></div>
+
+<script>
+// ─── DATA MODEL ───────────────────────────────────────────────────────────────
+const INDICATORS = {
+  gdp: {
+    id:'gdp', name:'GDP Growth (YoY)', value:6.4, unit:'%', change:'-0.4% vs prev',
+    dir:'down', period:'Q3 FY26',
+    bench:{ min:0, max:12, zones:[{w:'40%',cls:'zone-g'},{w:'30%',cls:'zone-a'},{w:'30%',cls:'zone-r'}],
+            needle:53, low:5.5, high:8.5, ideal:'6–8%', label:'Ideal: 6–8%' },
+    status:'good', badge:'NORMAL',
+    warning:null,
+    history:{ labels:['Q3FY24','Q4FY24','Q1FY25','Q2FY25','Q3FY25','Q4FY25','Q1FY26','Q2FY26','Q3FY26'],
+              values:[8.4,7.8,6.7,5.4,8.6,7.4,6.7,6.8,6.4], color:'#22c55e' },
+    benchmarks:[ {label:'RBI FY26 Est',val:'6.6%'}, {label:'IMF Est',val:'6.5%'}, {label:'Ideal band',val:'6–8%'} ]
+  },
+  cpi: {
+    id:'cpi', name:'CPI Inflation', value:4.6, unit:'%', change:'▼ -0.5% MoM',
+    dir:'up', period:'Mar 2026',
+    bench:{ min:0, max:10, zones:[{w:'40%',cls:'zone-g'},{w:'30%',cls:'zone-a'},{w:'30%',cls:'zone-r'}],
+            needle:46, low:2, high:6, ideal:'2–6% (RBI target 4±2%)', label:'RBI target: 4±2%' },
+    status:'good', badge:'OK',
+    warning:null,
+    history:{ labels:['Apr25','May25','Jun25','Jul25','Aug25','Sep25','Oct25','Nov25','Dec25','Jan26','Feb26','Mar26'],
+              values:[4.8,4.7,5.1,3.5,3.7,5.5,6.2,5.5,5.2,4.3,3.6,4.6], color:'#f59e0b' },
+    benchmarks:[ {label:'RBI Target',val:'4%'}, {label:'Band',val:'2–6%'}, {label:'Core CPI',val:'4.1%'} ]
+  },
+  iip: {
+    id:'iip', name:'IIP Growth', value:5.2, unit:'%', change:'▲ +0.4% MoM',
+    dir:'up', period:'Feb 2026',
+    bench:{ min:-5, max:15, zones:[{w:'33%',cls:'zone-r'},{w:'44%',cls:'zone-g'},{w:'23%',cls:'zone-a'}],
+            needle:51, low:4, high:8, ideal:'4–8%', label:'Healthy: 4–8%' },
+    status:'good', badge:'HEALTHY',
+    warning:null,
+    history:{ labels:['Mar25','Apr25','May25','Jun25','Jul25','Aug25','Sep25','Oct25','Nov25','Dec25','Jan26','Feb26'],
+              values:[4.9,5.0,5.5,4.0,-0.1,4.8,3.1,3.5,5.2,3.2,5.0,5.2], color:'#60a5fa' },
+    benchmarks:[ {label:'Pre-COVID avg',val:'5.5%'}, {label:'FY26 YTD avg',val:'4.8%'} ]
+  },
+  wpi: {
+    id:'wpi', name:'WPI Inflation', value:2.1, unit:'%', change:'▼ easing',
+    dir:'up', period:'Mar 2026',
+    bench:{ min:-5, max:15, zones:[{w:'33%',cls:'zone-g'},{w:'33%',cls:'zone-g'},{w:'34%',cls:'zone-a'}],
+            needle:38, low:0, high:5, ideal:'0–5%', label:'Benign: 0–5%' },
+    status:'good', badge:'BENIGN',
+    warning:null,
+    history:{ labels:['Apr25','May25','Jun25','Jul25','Aug25','Sep25','Oct25','Nov25','Dec25','Jan26','Feb26','Mar26'],
+              values:[1.3,2.6,3.4,3.4,1.3,1.8,2.4,2.2,2.4,3.0,2.4,2.1], color:'#a78bfa' },
+    benchmarks:[ {label:'Ideal',val:'0–5%'}, {label:'FY25 avg',val:'1.4%'} ]
+  },
+  repo: {
+    id:'repo', name:'Repo Rate', value:6.0, unit:'%', change:'▼ CUT -25bps Apr\'26',
+    dir:'up', period:'Apr 2026',
+    bench:{ min:0, max:10, zones:[{w:'30%',cls:'zone-r'},{w:'45%',cls:'zone-g'},{w:'25%',cls:'zone-a'}],
+            needle:60, low:4.5, high:7.5, ideal:'Neutral: 5.5–6.5%', label:'Neutral zone: 5.5–6.5%' },
+    status:'good', badge:'ACCOMMODATIVE',
+    warning:null,
+    history:{ labels:['Apr23','Oct23','Apr24','Oct24','Feb25','Apr25','Aug25','Oct25','Feb26','Apr26'],
+              values:[6.5,6.5,6.5,6.5,6.5,6.25,6.25,6.25,6.25,6.0], color:'#22c55e' },
+    benchmarks:[ {label:'Neutral rate',val:'~5.75%'}, {label:'US Fed',val:'4.25–4.5%'}, {label:'RBI stance',val:'Accommodative'} ]
+  },
+  gsec: {
+    id:'gsec', name:'10Y G-Sec Yield', value:6.74, unit:'%', change:'▼ -8bps WoW',
+    dir:'up', period:'23 Apr 2026',
+    bench:{ min:4, max:10, zones:[{w:'30%',cls:'zone-g'},{w:'45%',cls:'zone-g'},{w:'25%',cls:'zone-a'}],
+            needle:45, low:6.0, high:8.0, ideal:'6–8%', label:'Normal: 6–8%' },
+    status:'good', badge:'NORMAL',
+    warning:null,
+    history:{ labels:['Apr24','Jun24','Aug24','Oct24','Dec24','Feb25','Apr25','Jun25','Aug25','Oct25','Dec25','Feb26','Apr26'],
+              values:[7.2,7.0,6.85,6.9,6.75,6.65,6.75,6.55,6.5,6.7,6.65,6.7,6.74], color:'#60a5fa' },
+    benchmarks:[ {label:'Repo spread',val:'+74bps'}, {label:'US 10Y spread',val:'+242bps'}, {label:'Real yield',val:'+2.1%'} ]
+  },
+  inrusd: {
+    id:'inrusd', name:'INR / USD', value:84.3, unit:'₹', change:'▲ +0.2% WoW',
+    dir:'down', period:'23 Apr 2026',
+    bench:{ min:60, max:100, zones:[{w:'30%',cls:'zone-g'},{w:'40%',cls:'zone-a'},{w:'30%',cls:'zone-r'}],
+            needle:60, low:72, high:88, ideal:'RBI comfort: 80–88', label:'RBI comfort: 80–88' },
+    status:'good', badge:'STABLE',
+    warning:null,
+    history:{ labels:['Apr24','Jun24','Aug24','Oct24','Dec24','Feb25','Apr25','Jun25','Aug25','Oct25','Dec25','Feb26','Apr26'],
+              values:[83.5,83.4,83.9,84.1,85.0,86.9,84.2,83.9,83.5,84.2,85.7,87.0,84.3], color:'#f59e0b' },
+    benchmarks:[ {label:'RBI band',val:'80–88'}, {label:'1Y ago',val:'83.5'}, {label:'PPP fair',val:'~70'} ]
+  },
+  m3: {
+    id:'m3', name:'M3 Money Supply (YoY)', value:10.2, unit:'%', change:'→ stable',
+    dir:'flat', period:'Mar 2026',
+    bench:{ min:0, max:20, zones:[{w:'35%',cls:'zone-g'},{w:'40%',cls:'zone-g'},{w:'25%',cls:'zone-a'}],
+            needle:51, low:8, high:14, ideal:'8–14%', label:'RBI desirable: 8–14%' },
+    status:'good', badge:'NORMAL',
+    warning:null,
+    history:{ labels:['Apr25','Jun25','Aug25','Oct25','Dec25','Feb26','Mar26'],
+              values:[11.2,11.5,10.9,10.4,9.8,10.0,10.2], color:'#a78bfa' },
+    benchmarks:[ {label:'Ideal',val:'8–14%'}, {label:'Nominal GDP growth',val:'~12%'} ]
+  },
+  gst: {
+    id:'gst', name:'GST Collections', value:2.37, unit:'₹L Cr', change:'▲ +11.5% YoY',
+    dir:'up', period:'Mar 2026',
+    bench:{ min:0, max:3, zones:[{w:'40%',cls:'zone-r'},{w:'40%',cls:'zone-g'},{w:'20%',cls:'zone-g'}],
+            needle:79, low:1.5, high:2.5, ideal:'>₹1.5L Cr', label:'Strong: >₹1.5L Cr' },
+    status:'good', badge:'RECORD',
+    warning:null,
+    history:{ labels:['Apr25','May25','Jun25','Jul25','Aug25','Sep25','Oct25','Nov25','Dec25','Jan26','Feb26','Mar26'],
+              values:[1.73,1.57,1.51,1.65,1.75,1.73,1.87,1.68,1.77,1.96,1.83,2.37], color:'#22c55e' },
+    benchmarks:[ {label:'FY26 avg',val:'₹1.82L Cr'}, {label:'YoY growth',val:'+11.5%'}, {label:'Budget target',val:'₹22L Cr FY26'} ]
+  },
+  fiscal_def: {
+    id:'fiscal_def', name:'Fiscal Deficit', value:4.9, unit:'% GDP', change:'→ On track',
+    dir:'flat', period:'FY26 RE',
+    bench:{ min:0, max:10, zones:[{w:'30%',cls:'zone-g'},{w:'40%',cls:'zone-a'},{w:'30%',cls:'zone-r'}],
+            needle:49, low:2, high:6, ideal:'<5.1% (Budget target)', label:'Target: <5.1%' },
+    status:'warn', badge:'WATCH',
+    warning:'Elevated vs 3% FRBM target',
+    history:{ labels:['FY20','FY21','FY22','FY23','FY24','FY25','FY26E'],
+              values:[3.4,9.2,6.7,6.4,5.6,5.1,4.9], color:'#f59e0b' },
+    benchmarks:[ {label:'Budget target',val:'5.1%'}, {label:'FRBM target',val:'3%'}, {label:'FY25 actual',val:'5.6%'} ]
+  },
+  cad: {
+    id:'cad', name:'Current Account Deficit', value:1.1, unit:'% GDP', change:'▼ Narrowing',
+    dir:'up', period:'Q3 FY26',
+    bench:{ min:0, max:6, zones:[{w:'33%',cls:'zone-g'},{w:'33%',cls:'zone-a'},{w:'34%',cls:'zone-r'}],
+            needle:18, low:0, high:3, ideal:'0–2.5% comfortable', label:'Comfortable: <2.5%' },
+    status:'good', badge:'COMFORTABLE',
+    warning:null,
+    history:{ labels:['Q1FY25','Q2FY25','Q3FY25','Q4FY25','Q1FY26','Q2FY26','Q3FY26'],
+              values:[1.1,1.3,2.5,0.6,1.0,1.4,1.1], color:'#22c55e' },
+    benchmarks:[ {label:'Comfortable',val:'<2.5%'}, {label:'Critical',val:'>3.5%'}, {label:'Forex reserves',val:'$655B'} ]
+  },
+  nifty_pe: {
+    id:'nifty_pe', name:'Nifty 50 P/E', value:20.4, unit:'x', change:'▼ -1.2x MoM',
+    dir:'up', period:'23 Apr 2026',
+    bench:{ min:10, max:35, zones:[{w:'30%',cls:'zone-g'},{w:'40%',cls:'zone-g'},{w:'30%',cls:'zone-r'}],
+            needle:42, low:16, high:26, ideal:'Long-run avg: 20–22x', label:'Historical avg: 20–22x' },
+    status:'good', badge:'FAIR',
+    warning:null,
+    history:{ labels:['Apr24','Jun24','Aug24','Oct24','Dec24','Feb25','Apr25','Jun25','Aug25','Oct25','Dec25','Feb26','Apr26'],
+              values:[21.0,22.0,23.8,24.1,22.7,21.2,23.5,22.1,21.4,23.0,22.5,21.0,20.4], color:'#60a5fa' },
+    benchmarks:[ {label:'10Y avg',val:'20–22x'}, {label:'Peak (2021)',val:'40x'}, {label:'Trough (2020)',val:'16x'}, {label:'Current',val:'20.4x — Fair'} ]
+  },
+  india_vix: {
+    id:'india_vix', name:'India VIX', value:14.2, unit:'', change:'▼ -1.8 WoW',
+    dir:'up', period:'23 Apr 2026',
+    bench:{ min:0, max:50, zones:[{w:'30%',cls:'zone-g'},{w:'40%',cls:'zone-a'},{w:'30%',cls:'zone-r'}],
+            needle:28, low:10, high:20, ideal:'Low fear: <20', label:'Low: <20, High: >25' },
+    status:'good', badge:'LOW FEAR',
+    warning:null,
+    history:{ labels:['Apr24','Jun24','Aug24','Oct24','Dec24','Feb25','Apr25','Jun25','Aug25','Oct25','Dec25','Feb26','Apr26'],
+              values:[14,15,13,17,14,18,22,16,14,18,15,17,14.2], color:'#22c55e' },
+    benchmarks:[ {label:'Low fear',val:'<20'}, {label:'High fear',val:'>25'}, {label:'Panic zone',val:'>35'}, {label:'Election avg',val:'~22'} ]
+  },
+  eq_yield_spread: {
+    id:'eq_yield_spread', name:'Equity-Bond Yield Spread', value:2.2, unit:'%', change:'▲ Widening',
+    dir:'up', period:'23 Apr 2026',
+    bench:{ min:-2, max:6, zones:[{w:'25%',cls:'zone-r'},{w:'50%',cls:'zone-g'},{w:'25%',cls:'zone-a'}],
+            needle:53, low:1, high:4, ideal:'>1% = Equities attractive', label:'>1% equities attractive' },
+    status:'good', badge:'BUY EQUITIES',
+    warning:null,
+    history:{ labels:['Apr24','Jun24','Aug24','Oct24','Dec24','Feb25','Apr25','Jun25','Aug25','Oct25','Dec25','Feb26','Apr26'],
+              values:[1.6,1.4,1.7,1.5,2.1,2.0,1.4,2.0,2.4,1.6,1.8,2.0,2.2], color:'#22c55e' },
+    benchmarks:[ {label:'>1%',val:'Equities attractive'}, {label:'<0%',val:'Bonds preferred'}, {label:'Current EY',val:'4.9%'} ]
+  },
+  buffett_indicator: {
+    id:'buffett_indicator', name:'Buffett Indicator (India MCap/GDP)', value:82, unit:'%', change:'▼ -4% MoM',
+    dir:'flat', period:'Apr 2026',
+    bench:{ min:0, max:150, zones:[{w:'37%',cls:'zone-g'},{w:'27%',cls:'zone-a'},{w:'36%',cls:'zone-r'}],
+            needle:55, low:55, high:100, ideal:'Fair: 55–75%', label:'Fair: 55–75%' },
+    status:'warn', badge:'CAUTION',
+    warning:'Market cap above fair value zone (Buffett signal)',
+    history:{ labels:['FY20','FY21','FY22','FY23','FY24','FY25','Apr26'],
+              values:[54,75,109,78,98,117,82], color:'#f59e0b' },
+    benchmarks:[ {label:'Undervalued',val:'<55%'}, {label:'Fair value',val:'55–75%'}, {label:'Overvalued',val:'>100%'}, {label:'Peak (FY22)',val:'109%'} ]
+  },
+  brent: {
+    id:'brent', name:'Brent Crude', value:74, unit:'$/bbl', change:'▼ -3.1% WoW',
+    dir:'up', period:'23 Apr 2026',
+    bench:{ min:20, max:150, zones:[{w:'30%',cls:'zone-g'},{w:'40%',cls:'zone-g'},{w:'30%',cls:'zone-r'}],
+            needle:41, low:60, high:90, ideal:'India comfort: $60–90', label:'India comfort: $60–90' },
+    status:'good', badge:'INDIA POSITIVE',
+    warning:null,
+    history:{ labels:['Apr24','Jun24','Aug24','Oct24','Dec24','Feb25','Apr25','Jun25','Aug25','Oct25','Dec25','Feb26','Apr26'],
+              values:[88,85,80,77,73,75,75,72,75,73,72,75,74], color:'#f59e0b' },
+    benchmarks:[ {label:'India comfort zone',val:'$60–90'}, {label:'Budget assumption',val:'$85'}, {label:'India import cost',val:'~$120B/yr'} ]
+  },
+  gold: {
+    id:'gold', name:'Gold', value:3340, unit:'$/oz', change:'▲ +1.8% WoW',
+    dir:'down', period:'23 Apr 2026',
+    bench:{ min:1000, max:4000, zones:[{w:'30%',cls:'zone-g'},{w:'40%',cls:'zone-a'},{w:'30%',cls:'zone-r'}],
+            needle:78, low:1800, high:2800, ideal:'Flight to safety signal >$2500', label:'>$2500: risk-off signal' },
+    status:'warn', badge:'RISK-OFF SIGNAL',
+    warning:'Gold at elevated levels — global risk-off or USD weakness',
+    history:{ labels:['Apr24','Jun24','Aug24','Oct24','Dec24','Feb25','Apr25','Jun25','Aug25','Oct25','Dec25','Feb26','Apr26'],
+              values:[2350,2330,2450,2700,2640,2900,3100,3200,3300,3250,3000,3100,3340], color:'#f59e0b' },
+    benchmarks:[ {label:'10Y avg',val:'~$1,700'}, {label:'ATH',val:'$3,500 (Apr\'25)'}, {label:'Risk-off signal',val:'>$2,500'} ]
+  },
+  dxy: {
+    id:'dxy', name:'DXY (US Dollar Index)', value:99.1, unit:'', change:'▼ -1.4% MoM',
+    dir:'up', period:'23 Apr 2026',
+    bench:{ min:80, max:120, zones:[{w:'30%',cls:'zone-r'},{w:'40%',cls:'zone-g'},{w:'30%',cls:'zone-a'}],
+            needle:48, low:95, high:107, ideal:'EM comfort: 95–105', label:'EM comfort: 95–105' },
+    status:'good', badge:'EM POSITIVE',
+    warning:null,
+    history:{ labels:['Apr24','Jun24','Aug24','Oct24','Dec24','Feb25','Apr25','Jun25','Aug25','Oct25','Dec25','Feb26','Apr26'],
+              values:[104,105,101,103,108,107,104,103,102,104,108,106,99.1], color:'#60a5fa' },
+    benchmarks:[ {label:'EM comfort zone',val:'95–105'}, {label:'FII inflow trigger',val:'<100'}, {label:'20Y avg',val:'~97'} ]
+  },
+  us_vix: {
+    id:'us_vix', name:'VIX (US Fear Index)', value:28.4, unit:'', change:'▲ +4.2 MoM',
+    dir:'down', period:'23 Apr 2026',
+    bench:{ min:0, max:60, zones:[{w:'28%',cls:'zone-g'},{w:'35%',cls:'zone-a'},{w:'37%',cls:'zone-r'}],
+            needle:47, low:10, high:20, ideal:'Normal: <20', label:'Normal: <20' },
+    status:'warn', badge:'ELEVATED',
+    warning:'US VIX above 25 — global risk sentiment deteriorating',
+    history:{ labels:['Apr24','Jun24','Aug24','Oct24','Dec24','Feb25','Apr25','Jun25','Aug25','Oct25','Dec25','Feb26','Apr26'],
+              values:[15,13,16,21,17,19,52,17,15,20,16,19,28.4], color:'#ef4444' },
+    benchmarks:[ {label:'Normal',val:'<20'}, {label:'Concern',val:'20–30'}, {label:'Panic',val:'>40'}, {label:'2020 peak',val:'82'} ]
+  },
+  us10y: {
+    id:'us10y', name:'US 10Y Treasury', value:4.32, unit:'%', change:'▼ -12bps WoW',
+    dir:'up', period:'23 Apr 2026',
+    bench:{ min:0, max:8, zones:[{w:'25%',cls:'zone-g'},{w:'50%',cls:'zone-a'},{w:'25%',cls:'zone-r'}],
+            needle:54, low:2, high:5, ideal:'Neutral: 2–5%', label:'>5% = risk-off for EM' },
+    status:'warn', badge:'WATCH',
+    warning:'Elevated US yields pressure FII outflows from India',
+    history:{ labels:['Apr24','Jun24','Aug24','Oct24','Dec24','Feb25','Apr25','Jun25','Aug25','Oct25','Dec25','Feb26','Apr26'],
+              values:[4.7,4.4,3.9,4.3,4.6,4.5,4.3,4.6,4.4,4.2,4.5,4.7,4.32], color:'#ef4444' },
+    benchmarks:[ {label:'Normal',val:'2–4%'}, {label:'EM pressure',val:'>5%'}, {label:'India spread',val:'+242bps'} ]
+  },
+  fed_rate: {
+    id:'fed_rate', name:'Fed Funds Rate', value:4.375, unit:'%', change:'→ On hold',
+    dir:'flat', period:'Mar 2026',
+    bench:{ min:0, max:7, zones:[{w:'28%',cls:'zone-g'},{w:'43%',cls:'zone-g'},{w:'29%',cls:'zone-r'}],
+            needle:63, low:1, high:5.5, ideal:'Neutral: 2–3%', label:'Neutral est: 2.5%' },
+    status:'warn', badge:'RESTRICTIVE',
+    warning:'Fed remains restrictive — limits RBI rate cut room',
+    history:{ labels:['Jan23','Apr23','Jul23','Oct23','Jan24','Apr24','Jul24','Oct24','Dec24','Mar25','Jun25','Sep25','Mar26'],
+              values:[4.5,5.0,5.25,5.25,5.25,5.25,5.25,4.75,4.5,4.5,4.5,4.5,4.375], color:'#ef4444' },
+    benchmarks:[ {label:'Neutral',val:'~2.5%'}, {label:'Peak (Jul23)',val:'5.25–5.5%'}, {label:'Next cut exp',val:'Jun/Jul 2026'} ]
+  },
+  pmi_india_mfg: {
+    id:'pmi_india_mfg', name:'India PMI Manufacturing', value:58.1, unit:'', change:'▲ +0.4 MoM',
+    dir:'up', period:'Mar 2026',
+    bench:{ min:40, max:65, zones:[{w:'20%',cls:'zone-r'},{w:'30%',cls:'zone-a'},{w:'50%',cls:'zone-g'}],
+            needle:72, low:50, high:55, ideal:'Expansion: >50', label:'Expansion: >50' },
+    status:'good', badge:'STRONG',
+    warning:null,
+    history:{ labels:['Apr25','May25','Jun25','Jul25','Aug25','Sep25','Oct25','Nov25','Dec25','Jan26','Feb26','Mar26'],
+              values:[59.1,57.5,58.3,58.5,57.9,56.5,57.5,56.5,56.4,57.7,56.3,58.1], color:'#22c55e' },
+    benchmarks:[ {label:'Neutral',val:'50'}, {label:'Strong',val:'>55'}, {label:'India avg',val:'~56'} ]
+  },
+  pmi_india_svc: {
+    id:'pmi_india_svc', name:'India PMI Services', value:59.0, unit:'', change:'▲ +0.8 MoM',
+    dir:'up', period:'Mar 2026',
+    bench:{ min:40, max:65, zones:[{w:'20%',cls:'zone-r'},{w:'30%',cls:'zone-a'},{w:'50%',cls:'zone-g'}],
+            needle:76, low:50, high:55, ideal:'Expansion: >50', label:'Expansion: >50' },
+    status:'good', badge:'STRONG',
+    warning:null,
+    history:{ labels:['Apr25','May25','Jun25','Jul25','Aug25','Sep25','Oct25','Nov25','Dec25','Jan26','Feb26','Mar26'],
+              values:[60.2,61.2,59.6,60.3,57.3,57.7,58.5,58.4,59.3,56.5,59.2,59.0], color:'#22c55e' },
+    benchmarks:[ {label:'Neutral',val:'50'}, {label:'Strong',val:'>55'}, {label:'India avg',val:'~58'} ]
+  },
+  pmi_us_mfg: {
+    id:'pmi_us_mfg', name:'US ISM Manufacturing', value:49.0, unit:'', change:'▼ -0.9 MoM',
+    dir:'down', period:'Mar 2026',
+    bench:{ min:40, max:65, zones:[{w:'20%',cls:'zone-r'},{w:'30%',cls:'zone-g'},{w:'50%',cls:'zone-g'}],
+            needle:45, low:48, high:58, ideal:'Expansion: >50', label:'Expansion: >50' },
+    status:'warn', badge:'CONTRACTION',
+    warning:'US manufacturing in contraction — global slowdown risk',
+    history:{ labels:['Apr25','May25','Jun25','Jul25','Aug25','Sep25','Oct25','Nov25','Dec25','Jan26','Feb26','Mar26'],
+              values:[49.2,48.7,48.5,46.8,47.2,47.3,46.5,48.4,49.3,50.9,50.3,49.0], color:'#ef4444' },
+    benchmarks:[ {label:'Neutral',val:'50'}, {label:'US avg',val:'~52'}, {label:'Recession signal',val:'<45 for 6m'} ]
+  },
+  pmi_china: {
+    id:'pmi_china', name:'China NBS PMI', value:51.1, unit:'', change:'▲ +0.3 MoM',
+    dir:'up', period:'Mar 2026',
+    bench:{ min:40, max:65, zones:[{w:'20%',cls:'zone-r'},{w:'30%',cls:'zone-a'},{w:'50%',cls:'zone-g'}],
+            needle:51, low:49, high:54, ideal:'Expansion: >50', label:'Expansion: >50' },
+    status:'good', badge:'EXPANDING',
+    warning:null,
+    history:{ labels:['Apr25','May25','Jun25','Jul25','Aug25','Sep25','Oct25','Nov25','Dec25','Jan26','Feb26','Mar26'],
+              values:[49.2,49.5,49.5,49.4,49.1,49.8,50.1,50.1,50.1,49.1,50.2,51.1], color:'#60a5fa' },
+    benchmarks:[ {label:'Neutral',val:'50'}, {label:'Geopolitical risk',val:'Tariffs'} ]
+  },
+  copper: {
+    id:'copper', name:'Copper (Dr. Copper)', value:4.62, unit:'$/lb', change:'▼ -2.3% MoM',
+    dir:'down', period:'23 Apr 2026',
+    bench:{ min:2, max:8, zones:[{w:'25%',cls:'zone-r'},{w:'50%',cls:'zone-g'},{w:'25%',cls:'zone-a'}],
+            needle:44, low:3, high:5.5, ideal:'Healthy growth: $3.5–5', label:'Growth signal: $3.5–5' },
+    status:'good', badge:'GROWTH OK',
+    warning:null,
+    history:{ labels:['Apr24','Jun24','Aug24','Oct24','Dec24','Feb25','Apr25','Jun25','Aug25','Oct25','Dec25','Feb26','Apr26'],
+              values:[4.5,4.4,4.1,4.4,4.1,4.3,5.1,4.7,4.2,4.4,4.0,4.3,4.62], color:'#f59e0b' },
+    benchmarks:[ {label:'Recessionary',val:'<$3.5'}, {label:'Growth zone',val:'$3.5–5.5'}, {label:'Boom',val:'>$5.5'} ]
+  }
+};
+
+const FLOWS = [
+  { name:'FII Equity (MTD Apr \'26)', value:'−₹4,210 Cr', num:-4210, max:15000, signal:'SELLING', cls:'down' },
+  { name:'DII Equity (MTD Apr \'26)', value:'+₹9,870 Cr', num:9870, max:15000, signal:'BUYING', cls:'up' },
+  { name:'FII Debt (MTD Apr \'26)',   value:'+₹2,100 Cr', num:2100, max:15000, signal:'INFLOW', cls:'up' },
+  { name:'SIP Flows (Mar \'26)',      value:'₹25,926 Cr', num:25926, max:30000, signal:'RECORD', cls:'up' }
+];
+
+let activeChart = null;
+let trendChartInstance = null;
+
+// ─── RENDER CARD ──────────────────────────────────────────────────────────────
+function renderCard(d) {
+  const statusCls = d.status === 'danger' ? 'danger' : d.status === 'warn' ? 'warn' : 'good';
+  const badgeCls = d.status === 'danger' ? 'badge-r' : d.status === 'warn' ? 'badge-a' : 'badge-g';
+  const changeCls = d.dir === 'up' ? 'up' : d.dir === 'down' ? 'down' : 'flat';
+
+  const zones = d.bench.zones.map(z => `<div class="${z.cls}" style="width:${z.w}; flex-shrink:0;"></div>`).join('');
+  const needlePct = Math.min(98, Math.max(2, d.bench.needle));
+
+  const warnHtml = d.warning
+    ? `<div class="icard-${d.status === 'danger' ? 'danger' : 'warn'}-text">⚠ ${d.warning}</div>`
+    : '';
+
+  return `
+  <div class="icard ${statusCls} ${activeChart === d.id ? 'selected' : ''}" onclick="openCard('${d.id}')" id="icard-${d.id}">
+    <div class="icard-top">
+      <span class="icard-name">${d.name}</span>
+      <span class="icard-badge ${badgeCls}">${d.badge}</span>
+    </div>
+    <div class="icard-value">${d.value}<span class="icard-unit"> ${d.unit}</span></div>
+    <div class="icard-change ${changeCls}">${d.change}</div>
+    <div class="bench-wrap">
+      <div class="bench-label"><span>${d.bench.label}</span><span>${d.period}</span></div>
+      <div class="bench-track">
+        <div class="bench-zones">${zones}</div>
+        <div class="bench-needle" style="left:${needlePct}%"></div>
+      </div>
+    </div>
+    ${warnHtml}
+    <div class="icard-footer">Click to view trend ↗</div>
+  </div>`;
+}
+
+// ─── RENDER SECTIONS ──────────────────────────────────────────────────────────
+function renderAll() {
+  document.getElementById('india-growth').innerHTML =
+    ['gdp','cpi','iip','wpi'].map(id => renderCard(INDICATORS[id])).join('');
+
+  document.getElementById('rbi-panel').innerHTML =
+    ['repo','gsec','inrusd','m3'].map(id => renderCard(INDICATORS[id])).join('');
+
+  document.getElementById('fiscal-panel').innerHTML =
+    ['gst','fiscal_def','cad','buffett_indicator'].map(id => renderCard(INDICATORS[id])).join('');
+
+  document.getElementById('market-internals').innerHTML =
+    ['nifty_pe','india_vix','eq_yield_spread'].map(id => renderCard(INDICATORS[id])).join('');
+
+  document.getElementById('global-panel').innerHTML =
+    ['brent','gold','dxy','us_vix'].map(id => renderCard(INDICATORS[id])).join('');
+  document.getElementById('global-panel').innerHTML +=
+    ['us10y','fed_rate','copper'].map(id => renderCard(INDICATORS[id])).join('') +
+    `<div></div>`;
+
+  document.getElementById('pmi-panel').innerHTML =
+    ['pmi_india_mfg','pmi_india_svc','pmi_us_mfg','pmi_china'].map(id => renderCard(INDICATORS[id])).join('');
+
+  renderFlows();
+  renderAlerts();
+  renderRegime();
+  updateTs();
+}
+
+function renderFlows() {
+  let html = '<div class="flow-table">';
+  FLOWS.forEach(f => {
+    const pct = Math.abs(f.num) / f.max * 100;
+    const barColor = f.num > 0 ? 'var(--green)' : 'var(--red)';
+    const sigCls = f.num > 0 ? 'badge-g' : 'badge-r';
+    html += `<div class="flow-row">
+      <span class="flow-name">${f.name}</span>
+      <div class="flow-bar-wrap"><div class="flow-bar" style="width:${pct}%;background:${barColor};"></div></div>
+      <span class="flow-val ${f.cls}">${f.value}</span>
+      <span class="flow-signal ${sigCls} icard-badge">${f.signal}</span>
+    </div>`;
+  });
+  html += '</div>';
+
+  // Forex reserves mini card
+  html += `<div style="display:grid;gap:10px;">
+    <div class="icard good" onclick="openCard('inrusd')">
+      <div class="icard-top"><span class="icard-name">Forex Reserves</span><span class="icard-badge badge-g">ROBUST</span></div>
+      <div class="icard-value">$655<span class="icard-unit"> B</span></div>
+      <div class="icard-change up">▲ +$10B MoM</div>
+      <div class="icard-footer">~11 months of import cover · Click for context ↗</div>
+    </div>
+    <div class="icard good" onclick="openCard('nifty_pe')">
+      <div class="icard-top"><span class="icard-name">Nifty 50 P/B</span><span class="icard-badge badge-g">FAIR</span></div>
+      <div class="icard-value">3.2<span class="icard-unit">x</span></div>
+      <div class="icard-change flat">→ 10Y avg 3.1x</div>
+      <div class="bench-wrap">
+        <div class="bench-label"><span>Fair value: 2.5–4x</span></div>
+        <div class="bench-track">
+          <div class="bench-zones"><div class="zone-g" style="width:40%"></div><div class="zone-a" style="width:35%"></div><div class="zone-r" style="width:25%"></div></div>
+          <div class="bench-needle" style="left:42%"></div>
+        </div>
+      </div>
+      <div class="icard-footer">Click for trend ↗</div>
+    </div>
+  </div>`;
+
+  document.getElementById('flows-section').innerHTML = html;
+}
+
+function renderAlerts() {
+  const warnings = Object.values(INDICATORS).filter(d => d.warning || d.status === 'danger');
+  if (!warnings.length) { document.getElementById('alerts-section').innerHTML = ''; return; }
+  let html = `<div class="section-hdr"><span class="section-title">Active Warnings</span><div class="section-line"></div></div><div class="alerts-panel">`;
+  warnings.forEach(d => {
+    const icon = d.status === 'danger' ? '🔴' : '🟡';
+    html += `<div class="alert-item"><span class="alert-icon">${icon}</span>
+      <span class="alert-text"><strong>${d.name} (${d.value}${d.unit})</strong> — ${d.warning || 'Danger zone'}</span></div>`;
+  });
+  html += '</div>';
+  document.getElementById('alerts-section').innerHTML = html;
+}
+
+function renderRegime() {
+  const goods = Object.values(INDICATORS).filter(d => d.status === 'good').length;
+  const warns = Object.values(INDICATORS).filter(d => d.status === 'warn').length;
+  const dangers = Object.values(INDICATORS).filter(d => d.status === 'danger').length;
+  const total = goods + warns + dangers;
+  const score = Math.round((goods * 1 + warns * 0.5) / total * 100);
+
+  document.getElementById('regime-score').textContent = `Score: ${score}/100`;
+
+  const dots = Object.values(INDICATORS).slice(0, 12).map(d => {
+    const c = d.status === 'good' ? 'var(--green)' : d.status === 'warn' ? 'var(--amber)' : 'var(--red)';
+    return `<div class="sig-dot" style="background:${c}" title="${d.name}"></div>`;
+  }).join('');
+  document.getElementById('signals-mini').innerHTML = dots;
+
+  const pill = document.getElementById('regime-pill');
+  const text = document.getElementById('regime-text');
+  if (score >= 70) {
+    pill.className = 'regime-pill regime-risk-on'; pill.textContent = 'RISK ON';
+    text.textContent = 'Strong macro tailwinds — constructive for equities';
+  } else if (score >= 50) {
+    pill.className = 'regime-pill regime-neutral'; pill.textContent = 'CAUTIOUSLY NEUTRAL';
+    text.textContent = 'Mixed signals — domestic strong, global headwinds';
+  } else {
+    pill.className = 'regime-pill regime-risk-off'; pill.textContent = 'RISK OFF';
+    text.textContent = 'Multiple warning signals — reduce risk exposure';
+  }
+}
+
+// ─── CHART ────────────────────────────────────────────────────────────────────
+function openCard(id) {
+  const d = INDICATORS[id];
+  if (!d) return;
+
+  if (activeChart === id) { closeChart(); return; }
+  activeChart = id;
+  renderAll();
+
+  const panel = document.getElementById('chart-panel');
+  document.getElementById('chart-title').textContent = d.name;
+  document.getElementById('chart-subtitle').textContent = `Historical trend · ${d.history.labels[0]} → ${d.history.labels[d.history.labels.length-1]}`;
+
+  let metaHtml = '';
+  d.benchmarks.forEach(b => {
+    metaHtml += `<div class="chart-meta-item"><div class="chart-meta-label">${b.label}</div><div class="chart-meta-val">${b.val}</div></div>`;
+  });
+  document.getElementById('chart-meta').innerHTML = metaHtml;
+
+  panel.classList.add('active');
+  panel.scrollIntoView({ behavior:'smooth', block:'nearest' });
+
+  if (trendChartInstance) { trendChartInstance.destroy(); trendChartInstance = null; }
+
+  const ctx = document.getElementById('trendChart').getContext('2d');
+  trendChartInstance = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: d.history.labels,
+      datasets: [{
+        label: d.name,
+        data: d.history.values,
+        borderColor: d.history.color,
+        backgroundColor: d.history.color + '18',
+        borderWidth: 2,
+        pointRadius: 3,
+        pointBackgroundColor: d.history.color,
+        fill: true,
+        tension: 0.3
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: '#1e2230',
+          titleColor: '#8b91a8',
+          bodyColor: '#e8eaf0',
+          borderColor: 'rgba(255,255,255,0.1)',
+          borderWidth: 1,
+          callbacks: {
+            label: ctx => `${ctx.parsed.y} ${d.unit}`
+          }
+        }
+      },
+      scales: {
+        x: { grid: { color:'rgba(255,255,255,0.04)' }, ticks: { color:'#545b72', font:{ family:'DM Mono', size:10 }, maxRotation:45 } },
+        y: { grid: { color:'rgba(255,255,255,0.04)' }, ticks: { color:'#545b72', font:{ family:'DM Mono', size:10 } } }
+      }
+    }
+  });
+}
+
+function closeChart() {
+  activeChart = null;
+  document.getElementById('chart-panel').classList.remove('active');
+  renderAll();
+}
+
+// ─── AI ANALYSIS ──────────────────────────────────────────────────────────────
+async function runAI() {
+  const btn = document.getElementById('ai-btn');
+  const content = document.getElementById('ai-content');
+  const signals = document.getElementById('ai-signals');
+
+  btn.disabled = true;
+  btn.innerHTML = '<span class="ai-loader"></span> Analyzing...';
+  content.innerHTML = '<span style="color:var(--text3);font-family:var(--mono);font-size:11px;">Reading macro data...</span>';
+  signals.style.display = 'none';
+
+  const snapshot = Object.values(INDICATORS).map(d =>
+    `${d.name}: ${d.value}${d.unit} (${d.badge}${d.warning ? ' — WARNING: '+d.warning : ''})`
+  ).join('\n');
+
+  const prompt = `You are a senior macro strategist at a top Indian equity fund. Analyze this real-time economic dashboard snapshot and give a sharp, actionable market intelligence brief.
+
+CURRENT MACRO SNAPSHOT (India + Global):
+${snapshot}
+
+FII/DII FLOWS: FII selling ₹4,210Cr MTD. DII buying ₹9,870Cr MTD. SIP at record ₹25,926Cr.
+
+Respond in exactly this structure (be concise, direct, use numbers):
+
+MACRO REGIME: [One sentence verdict — risk-on / risk-off / neutral with key reason]
+
+INDIA SETUP:
+• [2–3 bullet points on India macro — growth, inflation, rates]
+
+GLOBAL RISKS:
+• [2–3 bullet points on key global headwinds/tailwinds]
+
+KEY WARNINGS:
+• [List the 2–3 most important warning signals and why they matter for Indian equities]
+
+EQUITY MARKET SIGNAL:
+• Valuation: [P/E, Buffett indicator reading + verdict]
+• Flows: [FII/DII flow interpretation]
+• Volatility: [India VIX + US VIX interpretation]
+
+ACTIONABLE CALL:
+[One clear paragraph: Should investors be buying, holding, or trimming? Which sectors benefit from current macro? What triggers to watch?]
+
+SIGNAL: BUY / HOLD / TRIM [choose one] — [one line reason]`;
+
+  try {
+    const response = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 1000,
+        messages: [{ role: 'user', content: prompt }]
+      })
+    });
+
+    const data = await response.json();
+    const text = data.content?.[0]?.text || 'No response received.';
+
+    content.textContent = text;
+
+    // Extract signal
+    const signalMatch = text.match(/SIGNAL:\s*(BUY|HOLD|TRIM)/i);
+    if (signalMatch) {
+      const sig = signalMatch[1].toUpperCase();
+      const cls = sig === 'BUY' ? 'chip-buy' : sig === 'TRIM' ? 'chip-sell' : 'chip-hold';
+      signals.innerHTML = `
+        <span class="ai-signal-chip ${cls}">◉ ${sig} EQUITIES</span>
+        <span class="ai-signal-chip chip-neutral">Updated ${new Date().toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit'})} IST</span>`;
+      signals.style.display = 'flex';
+    }
+  } catch(err) {
+    content.textContent = `Error: ${err.message}. Check API key configuration.`;
+  }
+
+  btn.disabled = false;
+  btn.innerHTML = '↺ Re-analyze';
+}
+
+// ─── UTILS ────────────────────────────────────────────────────────────────────
+function updateTs() {
+  const now = new Date();
+  document.getElementById('ts').textContent =
+    now.toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric'}) + ' · ' +
+    now.toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit'}) + ' IST';
+}
+
+function refreshAll() {
+  updateTs();
+  renderAll();
+  const btn = document.querySelector('.refresh-btn');
+  btn.textContent = '✓ Refreshed';
+  setTimeout(() => btn.textContent = '↻ Refresh', 1500);
+}
+
+// Init
+renderAll();
+setInterval(updateTs, 60000);
+</script>
+</body>
+</html>
+
+<script>
+// ─── LIVE DATA LOADER (reads from data/macro.json written by GitHub Actions) ─
+async function loadLiveData() {
+  try {
+    const r = await fetch('data/macro.json?t=' + Date.now());
+    if (!r.ok) throw new Error('data/macro.json not found — using static data');
+    const live = await r.json();
+
+    // Merge live values into INDICATORS, preserving static benchmarks & history
+    const liveInd = live.indicators || {};
+    Object.keys(liveInd).forEach(key => {
+      if (INDICATORS[key]) {
+        const l = liveInd[key];
+        INDICATORS[key].value   = l.value   ?? INDICATORS[key].value;
+        INDICATORS[key].status  = l.status  ?? INDICATORS[key].status;
+        INDICATORS[key].badge   = l.badge   ?? INDICATORS[key].badge;
+        INDICATORS[key].change  = l.change  ?? INDICATORS[key].change;
+        INDICATORS[key].dir     = l.dir     ?? INDICATORS[key].dir;
+        INDICATORS[key].warning = l.warning ?? INDICATORS[key].warning;
+        INDICATORS[key].period  = l.period  ?? INDICATORS[key].period;
+        // Merge history if fetcher provided it
+        if (l.history && l.history.labels && l.history.labels.length > 2) {
+          INDICATORS[key].history = l.history;
+        }
+      }
+    });
+
+    // Update Buffett needle position dynamically
+    const bv = INDICATORS['buffett_indicator'];
+    if (liveInd['buffett']) {
+      bv.value = liveInd['buffett'].value;
+      bv.bench.needle = Math.min(98, Math.max(2, (bv.value / 150) * 100));
+      document.getElementById('buffett-val').textContent = bv.value + '%';
+      document.getElementById('buffett-needle').style.left = bv.bench.needle + '%';
+      const verdict = bv.value < 55 ? 'Undervalued — buy aggressively'
+        : bv.value < 75 ? 'Fair value — selective buying'
+        : bv.value < 100 ? 'Mildly overvalued — proceed with caution'
+        : 'Significantly overvalued — trim positions';
+      document.getElementById('buffett-verdict').textContent = verdict;
+    }
+
+    // Update regime from live data
+    if (live.regime) {
+      const pill = document.getElementById('regime-pill');
+      pill.textContent = live.regime;
+      pill.className = 'regime-pill ' + (
+        live.regime.includes('ON') ? 'regime-risk-on' :
+        live.regime.includes('OFF') ? 'regime-risk-off' : 'regime-neutral'
+      );
+    }
+    if (live.regime_score !== undefined) {
+      document.getElementById('regime-score').textContent = `Score: ${live.regime_score}/100`;
+    }
+    if (live.updated) {
+      const d = new Date(live.updated);
+      document.getElementById('ts').textContent =
+        d.toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric'}) +
+        ' · ' + d.toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit'}) + ' IST';
+    }
+
+    renderAll();
+    console.log('✓ Live data loaded from macro.json');
+  } catch (e) {
+    console.warn('Live data load failed, using static defaults:', e.message);
+  }
+}
+
+// Load live data on page load, then re-check every 30 min (visibility-aware)
+loadLiveData();
+let refreshInterval = setInterval(() => {
+  if (!document.hidden) loadLiveData();
+}, 30 * 60 * 1000);
+document.addEventListener('visibilitychange', () => {
+  if (!document.hidden) loadLiveData();
+});
+</script>
