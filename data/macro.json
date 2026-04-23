@@ -1,0 +1,32 @@
+{
+  "updated": "2026-04-23T03:30:00Z",
+  "regime": "CAUTIOUSLY NEUTRAL",
+  "regime_score": 54,
+  "indicators": {
+    "gdp":        { "value": 6.4,    "unit": "%",     "period": "Q3 FY26",   "label": "GDP Growth (YoY)",       "status": "good", "badge": "NORMAL",          "change": "▼ -0.4% vs prev", "dir": "down",  "warning": null },
+    "cpi":        { "value": 4.6,    "unit": "%",     "period": "Mar 2026",  "label": "CPI Inflation",           "status": "good", "badge": "OK",              "change": "▼ -0.5% MoM",    "dir": "up",    "warning": null },
+    "iip":        { "value": 5.2,    "unit": "%",     "period": "Feb 2026",  "label": "IIP Growth",              "status": "good", "badge": "HEALTHY",         "change": "▲ +0.4% MoM",    "dir": "up",    "warning": null },
+    "wpi":        { "value": 2.1,    "unit": "%",     "period": "Mar 2026",  "label": "WPI Inflation",           "status": "good", "badge": "BENIGN",          "change": "▼ easing",        "dir": "up",    "warning": null },
+    "repo":       { "value": 6.0,    "unit": "%",     "period": "Apr 2026",  "label": "Repo Rate",               "status": "good", "badge": "ACCOMMODATIVE",   "change": "▼ CUT -25bps",    "dir": "down",  "warning": null },
+    "gsec":       { "value": 6.74,   "unit": "%",     "period": "Live",      "label": "10Y G-Sec Yield",         "status": "good", "badge": "NORMAL",          "change": "▼ -8bps WoW",     "dir": "up",    "warning": null },
+    "inrusd":     { "value": 84.3,   "unit": "₹",     "period": "Live",      "label": "INR / USD",               "status": "good", "badge": "STABLE",          "change": "▲ +0.2% WoW",    "dir": "flat",  "warning": null },
+    "m3":         { "value": 10.2,   "unit": "%",     "period": "Mar 2026",  "label": "M3 Money Supply (YoY)",   "status": "good", "badge": "NORMAL",          "change": "→ stable",        "dir": "flat",  "warning": null },
+    "gst":        { "value": 2.37,   "unit": "₹L Cr", "period": "Mar 2026",  "label": "GST Collections",         "status": "good", "badge": "RECORD",          "change": "▲ +11.5% YoY",   "dir": "up",    "warning": null },
+    "fiscal_def": { "value": 4.9,    "unit": "% GDP", "period": "FY26 RE",   "label": "Fiscal Deficit",          "status": "warn", "badge": "WATCH",           "change": "→ On track",      "dir": "flat",  "warning": "Elevated vs 3% FRBM target" },
+    "cad":        { "value": 1.1,    "unit": "% GDP", "period": "Q3 FY26",   "label": "Current Account Deficit", "status": "good", "badge": "COMFORTABLE",     "change": "▼ Narrowing",     "dir": "up",    "warning": null },
+    "nifty_pe":   { "value": 20.4,   "unit": "x",     "period": "Live",      "label": "Nifty 50 P/E",            "status": "good", "badge": "FAIR",            "change": "▼ -1.2x MoM",    "dir": "up",    "warning": null },
+    "india_vix":  { "value": 14.2,   "unit": "",      "period": "Live",      "label": "India VIX",               "status": "good", "badge": "LOW FEAR",        "change": "▼ -1.8 WoW",     "dir": "up",    "warning": null },
+    "buffett":    { "value": 82,     "unit": "%",     "period": "Apr 2026",  "label": "Buffett Indicator",       "status": "warn", "badge": "CAUTION",         "change": "▼ -4% MoM",      "dir": "flat",  "warning": "Market cap above fair value zone" },
+    "brent":      { "value": 74.0,   "unit": "$/bbl", "period": "Live",      "label": "Brent Crude",             "status": "good", "badge": "INDIA POSITIVE",  "change": "▼ -3.1% WoW",    "dir": "up",    "warning": null },
+    "gold":       { "value": 3340,   "unit": "$/oz",  "period": "Live",      "label": "Gold",                    "status": "warn", "badge": "RISK-OFF SIGNAL", "change": "▲ +1.8% WoW",    "dir": "down",  "warning": "Gold elevated — global risk-off or USD weakness" },
+    "dxy":        { "value": 99.1,   "unit": "",      "period": "Live",      "label": "DXY (USD Index)",         "status": "good", "badge": "EM POSITIVE",     "change": "▼ -1.4% MoM",    "dir": "down",  "warning": null },
+    "us_vix":     { "value": 28.4,   "unit": "",      "period": "Live",      "label": "VIX (US Fear Index)",     "status": "warn", "badge": "ELEVATED",        "change": "▲ +4.2 MoM",     "dir": "down",  "warning": "US VIX above 25 — global risk-off" },
+    "us10y":      { "value": 4.32,   "unit": "%",     "period": "Live",      "label": "US 10Y Treasury",         "status": "warn", "badge": "WATCH",           "change": "▼ -12bps WoW",   "dir": "up",    "warning": "Elevated US yields pressure FII outflows" },
+    "fed_rate":   { "value": 4.375,  "unit": "%",     "period": "Mar 2026",  "label": "Fed Funds Rate",          "status": "warn", "badge": "RESTRICTIVE",     "change": "→ On hold",       "dir": "flat",  "warning": "Fed remains restrictive — limits RBI cut room" },
+    "copper":     { "value": 4.62,   "unit": "$/lb",  "period": "Live",      "label": "Copper (Dr. Copper)",     "status": "good", "badge": "GROWTH OK",       "change": "▼ -2.3% MoM",    "dir": "down",  "warning": null },
+    "pmi_in_mfg": { "value": 58.1,   "unit": "",      "period": "Mar 2026",  "label": "India PMI Manufacturing", "status": "good", "badge": "STRONG",          "change": "▲ +0.4 MoM",     "dir": "up",    "warning": null },
+    "pmi_in_svc": { "value": 59.0,   "unit": "",      "period": "Mar 2026",  "label": "India PMI Services",      "status": "good", "badge": "STRONG",          "change": "▲ +0.8 MoM",     "dir": "up",    "warning": null },
+    "pmi_us_mfg": { "value": 49.0,   "unit": "",      "period": "Mar 2026",  "label": "US ISM Manufacturing",    "status": "warn", "badge": "CONTRACTION",     "change": "▼ -0.9 MoM",     "dir": "down",  "warning": "US manufacturing contracting — global slowdown risk" },
+    "pmi_china":  { "value": 51.1,   "unit": "",      "period": "Mar 2026",  "label": "China NBS PMI",           "status": "good", "badge": "EXPANDING",       "change": "▲ +0.3 MoM",     "dir": "up",    "warning": null }
+  }
+}
