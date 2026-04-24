@@ -1,0 +1,50 @@
+name: Refresh Macro Data (v2)
+
+on:
+  schedule:
+    # 03:30 UTC = 09:00 IST every day
+    - cron: "30 3 * * 1-6"      # Mon–Sat (skip Sunday)
+    # Second run at 10:00 UTC = 15:30 IST for afternoon update
+    - cron: "0 10 * * 1-6"
+  workflow_dispatch:             # Manual trigger from GitHub UI
+
+permissions:
+  contents: write
+
+jobs:
+  fetch-and-commit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Cache pip packages
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+
+      - name: Install dependencies
+        run: pip install --quiet requests yfinance
+
+      - name: Run fetcher
+        env:
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+        run: python scripts/fetch_macro_v2.py
+
+      - name: Commit updated data
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/macro.json
+          # Only commit if something changed
+          git diff --cached --quiet || \
+            git commit -m "data: macro refresh $(date -u '+%Y-%m-%d %H:%M UTC')"
+          git push
