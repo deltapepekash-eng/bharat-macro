@@ -1,5 +1,5 @@
 {
-  "updated": "2026-04-24T05:54:30Z",
+  "updated": "2026-04-24T07:07:00Z",
   "source_errors": [],
   "indicators": {
     "gdp": {
@@ -25,7 +25,7 @@
       "warning": null
     },
     "inrusd": {
-      "value": 94.28,
+      "value": 94.26,
       "unit": "\u20b9",
       "period": "Live",
       "label": "INR / USD",
@@ -85,7 +85,7 @@
           91.68,
           91.01,
           94.36,
-          94.28
+          94.26
         ]
       }
     },
@@ -193,7 +193,7 @@
       }
     },
     "gold": {
-      "value": 4697.0,
+      "value": 4690.0,
       "unit": "$/oz",
       "period": "Live",
       "label": "Gold",
@@ -201,7 +201,7 @@
       "status": "warn",
       "badge": "RISK-OFF SIGNAL",
       "change": "Risk-off signal",
-      "warning": "Gold at $4697.0 \u2014 elevated, risk-off globally",
+      "warning": "Gold at $4690.0 \u2014 elevated, risk-off globally",
       "history": {
         "labels": [],
         "values": []
