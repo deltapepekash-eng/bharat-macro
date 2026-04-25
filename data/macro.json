@@ -1,5 +1,5 @@
 {
-  "updated": "2026-04-25T03:41:22Z",
+  "updated": "2026-04-25T05:26:55Z",
   "version": "2.0",
   "indicators": {
     "gdp": {
@@ -197,7 +197,7 @@
       "warning": null
     },
     "crude_wti": {
-      "value": 94.88,
+      "value": 94.4,
       "unit": "$/bbl",
       "period": "Live",
       "label": "WTI Crude Oil",
@@ -205,7 +205,7 @@
       "badge": "PRESSURE",
       "change": "Moderate",
       "dir": "fl",
-      "warning": "WTI at $94.88 \u2014 India import cost pressure",
+      "warning": "WTI at $94.4 \u2014 India import cost pressure",
       "history": {
         "labels": [
           "2024-05",
@@ -247,7 +247,7 @@
           58.55,
           57.42,
           65.21,
-          94.88
+          94.4
         ]
       }
     },
@@ -313,7 +313,7 @@
       }
     },
     "gold": {
-      "value": 4725.0,
+      "value": 4722.0,
       "unit": "$/oz",
       "period": "Live",
       "label": "Gold",
@@ -321,7 +321,7 @@
       "badge": "RISK-OFF",
       "change": "Record levels",
       "dir": "dn",
-      "warning": "Gold at $4725.0 \u2014 risk-off / USD debasement signal",
+      "warning": "Gold at $4722.0 \u2014 risk-off / USD debasement signal",
       "history": {
         "labels": [
           "2023-12",
@@ -373,12 +373,12 @@
           4218.3,
           4325.6,
           4713.9,
-          4725.4
+          4740.9
         ]
       }
     },
     "silver": {
-      "value": 75.68,
+      "value": 76.38,
       "unit": "$/oz",
       "period": "Live",
       "label": "Silver",
@@ -428,12 +428,12 @@
           56.45,
           70.13,
           78.29,
-          75.68
+          76.41
         ]
       }
     },
     "copper": {
-      "value": 6.03,
+      "value": 6.02,
       "unit": "$/lb",
       "period": "Live",
       "label": "Copper (Dr. Copper)",
@@ -819,7 +819,7 @@
   "flows": {
     "fii_equity_daily": -4210,
     "dii_equity_daily": 9870,
-    "updated": "2026-04-25T03:42:07Z",
+    "updated": "2026-04-25T05:27:40Z",
     "note": "Daily provisional NSE data"
   },
   "shipping": {},
