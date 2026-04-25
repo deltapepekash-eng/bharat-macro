@@ -1,5 +1,5 @@
 {
-  "updated": "2026-04-24T13:15:01Z",
+  "updated": "2026-04-25T03:17:35Z",
   "version": "2.0",
   "indicators": {
     "gdp": {
@@ -77,7 +77,7 @@
       }
     },
     "inrusd": {
-      "value": 94.23,
+      "value": 94.22,
       "unit": "\u20b9",
       "period": "Live",
       "label": "INR / USD",
@@ -85,7 +85,7 @@
       "badge": "WEAK",
       "change": "Live rate",
       "dir": "fl",
-      "warning": "INR at 94.23 \u2014 RBI comfort zone 80\u201388",
+      "warning": "INR at 94.22 \u2014 RBI comfort zone 80\u201388",
       "history": {
         "labels": [
           "2024-05",
@@ -137,7 +137,7 @@
           91.68,
           91.01,
           94.36,
-          94.23
+          94.22
         ]
       }
     },
@@ -197,7 +197,7 @@
       "warning": null
     },
     "crude_wti": {
-      "value": 95.49,
+      "value": 94.88,
       "unit": "$/bbl",
       "period": "Live",
       "label": "WTI Crude Oil",
@@ -205,7 +205,7 @@
       "badge": "PRESSURE",
       "change": "Moderate",
       "dir": "fl",
-      "warning": "WTI at $95.49 \u2014 India import cost pressure",
+      "warning": "WTI at $94.88 \u2014 India import cost pressure",
       "history": {
         "labels": [
           "2024-05",
@@ -247,7 +247,7 @@
           58.55,
           57.42,
           65.21,
-          95.49
+          94.88
         ]
       }
     },
@@ -313,7 +313,7 @@
       }
     },
     "gold": {
-      "value": 4714.0,
+      "value": 4725.0,
       "unit": "$/oz",
       "period": "Live",
       "label": "Gold",
@@ -321,7 +321,7 @@
       "badge": "RISK-OFF",
       "change": "Record levels",
       "dir": "dn",
-      "warning": "Gold at $4714.0 \u2014 risk-off / USD debasement signal",
+      "warning": "Gold at $4725.0 \u2014 risk-off / USD debasement signal",
       "history": {
         "labels": [
           "2023-12",
@@ -373,18 +373,18 @@
           4218.3,
           4325.6,
           4713.9,
-          4713.8
+          4725.4
         ]
       }
     },
     "silver": {
-      "value": 75.33,
+      "value": 75.68,
       "unit": "$/oz",
       "period": "Live",
       "label": "Silver",
       "status": "good",
       "badge": "INDUSTRIAL",
-      "change": "Gold/Silver ratio: 63x",
+      "change": "Gold/Silver ratio: 62x",
       "dir": "fl",
       "warning": null,
       "history": {
@@ -428,12 +428,12 @@
           56.45,
           70.13,
           78.29,
-          75.33
+          75.68
         ]
       }
     },
     "copper": {
-      "value": 6.02,
+      "value": 6.03,
       "unit": "$/lb",
       "period": "Live",
       "label": "Copper (Dr. Copper)",
@@ -483,7 +483,7 @@
           5.19,
           5.63,
           5.9,
-          6.02
+          6.03
         ]
       }
     },
@@ -553,7 +553,7 @@
       }
     },
     "us10y": {
-      "value": 4.3,
+      "value": 4.34,
       "unit": "%",
       "period": "Live",
       "label": "US 10Y Treasury Yield",
@@ -571,7 +571,7 @@
           "2026-03",
           "2026-03",
           "2026-03",
-          "2026-03",
+          "2026-04",
           "2026-04",
           "2026-04",
           "2026-04",
@@ -590,7 +590,6 @@
           "2026-04"
         ],
         "values": [
-          4.39,
           4.34,
           4.39,
           4.33,
@@ -613,7 +612,8 @@
           4.26,
           4.26,
           4.3,
-          4.3
+          4.3,
+          4.34
         ]
       }
     },
@@ -683,7 +683,7 @@
       }
     },
     "us_vix": {
-      "value": 18.9,
+      "value": 19.3,
       "unit": "",
       "period": "Live",
       "label": "VIX (US Fear Index)",
@@ -701,7 +701,7 @@
           "2026-03",
           "2026-03",
           "2026-03",
-          "2026-03",
+          "2026-04",
           "2026-04",
           "2026-04",
           "2026-04",
@@ -719,7 +719,6 @@
           "2026-04"
         ],
         "values": [
-          26.78,
           26.15,
           26.95,
           25.33,
@@ -741,7 +740,8 @@
           17.48,
           18.87,
           19.5,
-          18.92
+          18.92,
+          19.31
         ]
       }
     },
@@ -753,6 +753,17 @@
       "status": "good",
       "badge": "SOLID",
       "change": "+178K jobs added",
+      "dir": "fl",
+      "warning": null
+    },
+    "us_unemp": {
+      "value": 4.3,
+      "unit": "%",
+      "period": "Latest",
+      "label": "US Unemployment Rate",
+      "status": "good",
+      "badge": "FULL EMPLOYMENT",
+      "change": "4.3%",
       "dir": "fl",
       "warning": null
     },
@@ -808,11 +819,11 @@
   "flows": {
     "fii_equity_daily": -4210,
     "dii_equity_daily": 9870,
-    "updated": "2026-04-24T13:15:52Z",
+    "updated": "2026-04-25T03:18:25Z",
     "note": "Daily provisional NSE data"
   },
   "shipping": {},
   "employment": {},
-  "regime_score": 84,
+  "regime_score": 85,
   "regime": "RISK-ON"
 }
