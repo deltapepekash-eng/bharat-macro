@@ -1,5 +1,5 @@
 {
-  "updated": "2026-04-25T03:17:35Z",
+  "updated": "2026-04-25T03:28:52Z",
   "version": "2.0",
   "indicators": {
     "gdp": {
@@ -819,7 +819,7 @@
   "flows": {
     "fii_equity_daily": -4210,
     "dii_equity_daily": 9870,
-    "updated": "2026-04-25T03:18:25Z",
+    "updated": "2026-04-25T03:29:36Z",
     "note": "Daily provisional NSE data"
   },
   "shipping": {},
