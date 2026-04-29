@@ -1,5 +1,5 @@
 {
-  "updated": "2026-04-29T06:11:43Z",
+  "updated": "2026-04-29T11:21:36Z",
   "version": "2.0",
   "indicators": {
     "gdp": {
@@ -77,7 +77,7 @@
       }
     },
     "inrusd": {
-      "value": 94.78,
+      "value": 94.82,
       "unit": "\u20b9",
       "period": "Live",
       "label": "INR / USD",
@@ -85,7 +85,7 @@
       "badge": "WEAK",
       "change": "Live rate",
       "dir": "fl",
-      "warning": "INR at 94.78 \u2014 RBI comfort zone 80\u201388",
+      "warning": "INR at 94.82 \u2014 RBI comfort zone 80\u201388",
       "history": {
         "labels": [
           "2024-05",
@@ -137,7 +137,7 @@
           91.68,
           91.01,
           94.36,
-          94.78
+          94.82
         ]
       }
     },
@@ -197,7 +197,7 @@
       "warning": null
     },
     "crude_wti": {
-      "value": 99.7,
+      "value": 103.07,
       "unit": "$/bbl",
       "period": "Live",
       "label": "WTI Crude Oil",
@@ -205,7 +205,7 @@
       "badge": "PRESSURE",
       "change": "Moderate",
       "dir": "fl",
-      "warning": "WTI at $99.7 \u2014 India import cost pressure",
+      "warning": "WTI at $103.07 \u2014 India import cost pressure",
       "history": {
         "labels": [
           "2024-05",
@@ -247,7 +247,7 @@
           58.55,
           57.42,
           65.21,
-          99.7
+          103.07
         ]
       }
     },
@@ -313,7 +313,7 @@
       }
     },
     "gold": {
-      "value": 4611.0,
+      "value": 4581.0,
       "unit": "$/oz",
       "period": "Live",
       "label": "Gold",
@@ -321,7 +321,7 @@
       "badge": "RISK-OFF",
       "change": "Record levels",
       "dir": "dn",
-      "warning": "Gold at $4611.0 \u2014 risk-off / USD debasement signal",
+      "warning": "Gold at $4581.0 \u2014 risk-off / USD debasement signal",
       "history": {
         "labels": [
           "2023-12",
@@ -373,18 +373,18 @@
           4218.3,
           4325.6,
           4713.9,
-          4610.7
+          4581.4
         ]
       }
     },
     "silver": {
-      "value": 74.3,
+      "value": 73.18,
       "unit": "$/oz",
       "period": "Live",
       "label": "Silver",
       "status": "good",
       "badge": "INDUSTRIAL",
-      "change": "Gold/Silver ratio: 62x",
+      "change": "Gold/Silver ratio: 63x",
       "dir": "fl",
       "warning": null,
       "history": {
@@ -428,12 +428,12 @@
           56.45,
           70.13,
           78.29,
-          74.3
+          73.18
         ]
       }
     },
     "copper": {
-      "value": 6.01,
+      "value": 5.98,
       "unit": "$/lb",
       "period": "Live",
       "label": "Copper (Dr. Copper)",
@@ -483,7 +483,7 @@
           5.19,
           5.63,
           5.9,
-          6.01
+          5.98
         ]
       }
     },
@@ -819,7 +819,7 @@
   "flows": {
     "fii_equity_daily": -4210,
     "dii_equity_daily": 9870,
-    "updated": "2026-04-29T06:12:30Z",
+    "updated": "2026-04-29T11:22:20Z",
     "note": "Daily provisional NSE data"
   },
   "shipping": {},
