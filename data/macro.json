@@ -1,6 +1,6 @@
 {
-  "updated": "2026-05-01T06:26:08Z",
-  "updated_ist": "01 May 2026 \u00b7 11:56 IST",
+  "updated": "2026-05-01T10:10:37Z",
+  "updated_ist": "01 May 2026 \u00b7 15:40 IST",
   "version": "3.1",
   "indicators": {
     "gdp": {
@@ -151,24 +151,24 @@
       "warning": null
     },
     "gold": {
-      "value": 4598.0,
+      "value": 4568.0,
       "unit": "$/oz",
       "period": "01 May 2026",
       "label": "Gold",
       "status": "warn",
       "badge": "RECORD HIGH",
-      "change": "$4598/oz \u2014 stooq.com",
+      "change": "$4568/oz \u2014 stooq.com",
       "dir": "fl",
-      "warning": "Gold at $4598 \u2014 elevated risk-off signal"
+      "warning": "Gold at $4568 \u2014 elevated risk-off signal"
     },
     "silver": {
-      "value": 73.77,
+      "value": 73.3,
       "unit": "$/oz",
       "period": "01 May 2026",
       "label": "Silver",
       "status": "good",
       "badge": "INDUSTRIAL",
-      "change": "$73.77/oz  \u00b7  G/S ratio: 62x",
+      "change": "$73.3/oz  \u00b7  G/S ratio: 62x",
       "dir": "fl",
       "warning": null
     },
@@ -2009,7 +2009,7 @@
   },
   "flows": {
     "date": "01 May 2026",
-    "updated": "2026-05-01T06:26:13Z",
+    "updated": "2026-05-01T10:10:42Z",
     "categories": [
       {
         "category": "DII",
@@ -2041,6 +2041,11 @@
     "IND": {
       "name": "India",
       "value": 6.49,
+      "year": "2024"
+    },
+    "CHN": {
+      "name": "China",
+      "value": 4.98,
       "year": "2024"
     },
     "USA": {
