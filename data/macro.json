@@ -1,6 +1,6 @@
 {
-  "updated": "2026-05-01T10:10:37Z",
-  "updated_ist": "01 May 2026 \u00b7 15:40 IST",
+  "updated": "2026-05-01T10:58:50Z",
+  "updated_ist": "01 May 2026 \u00b7 16:28 IST",
   "version": "3.1",
   "indicators": {
     "gdp": {
@@ -151,15 +151,15 @@
       "warning": null
     },
     "gold": {
-      "value": 4568.0,
+      "value": 4567.0,
       "unit": "$/oz",
       "period": "01 May 2026",
       "label": "Gold",
       "status": "warn",
       "badge": "RECORD HIGH",
-      "change": "$4568/oz \u2014 stooq.com",
+      "change": "$4567/oz \u2014 stooq.com",
       "dir": "fl",
-      "warning": "Gold at $4568 \u2014 elevated risk-off signal"
+      "warning": "Gold at $4567 \u2014 elevated risk-off signal"
     },
     "silver": {
       "value": 73.3,
@@ -2009,7 +2009,7 @@
   },
   "flows": {
     "date": "01 May 2026",
-    "updated": "2026-05-01T10:10:42Z",
+    "updated": "2026-05-01T10:58:55Z",
     "categories": [
       {
         "category": "DII",
