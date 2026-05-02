@@ -1,6 +1,6 @@
 {
-  "updated": "2026-05-01T10:58:50Z",
-  "updated_ist": "01 May 2026 \u00b7 16:28 IST",
+  "updated": "2026-05-02T05:53:53Z",
+  "updated_ist": "02 May 2026 \u00b7 11:23 IST",
   "version": "3.1",
   "indicators": {
     "gdp": {
@@ -54,7 +54,7 @@
     "repo": {
       "value": 6.0,
       "unit": "%",
-      "period": "01 May 2026",
+      "period": "02 May 2026",
       "label": "Repo Rate",
       "status": "good",
       "badge": "ACCOMMODATIVE",
@@ -65,7 +65,7 @@
     "gsec": {
       "value": 6.74,
       "unit": "%",
-      "period": "01 May 2026",
+      "period": "02 May 2026",
       "label": "10Y G-Sec Yield",
       "status": "good",
       "badge": "NORMAL",
@@ -76,18 +76,18 @@
     "inrusd": {
       "value": 84.3,
       "unit": "\u20b9",
-      "period": "01 May 2026",
+      "period": "02 May 2026",
       "label": "INR / USD",
       "status": "good",
       "badge": "STABLE",
-      "change": "RBI Reference Rate \u00b7 01 May 2026",
+      "change": "RBI Reference Rate \u00b7 02 May 2026",
       "dir": "fl",
       "warning": null
     },
     "nifty50_lvl": {
       "value": 23997.55,
       "unit": "",
-      "period": "01 May 2026",
+      "period": "02 May 2026",
       "label": "Nifty 50 Level",
       "status": "good",
       "badge": "LIVE",
@@ -98,7 +98,7 @@
     "nifty_pe": {
       "value": 20.94,
       "unit": "x",
-      "period": "01 May 2026",
+      "period": "02 May 2026",
       "label": "Nifty 50 P/E",
       "status": "good",
       "badge": "FAIR",
@@ -109,7 +109,7 @@
     "nifty_pb": {
       "value": 3.29,
       "unit": "x",
-      "period": "01 May 2026",
+      "period": "02 May 2026",
       "label": "Nifty 50 P/B",
       "status": "good",
       "badge": "FAIR",
@@ -120,7 +120,7 @@
     "india_vix": {
       "value": 18.46,
       "unit": "",
-      "period": "01 May 2026",
+      "period": "02 May 2026",
       "label": "India VIX",
       "status": "good",
       "badge": "LOW FEAR",
@@ -131,7 +131,7 @@
     "brent": {
       "value": 74.0,
       "unit": "$/bbl",
-      "period": "01 May 2026",
+      "period": "02 May 2026",
       "label": "Brent Crude Oil",
       "status": "good",
       "badge": "INDIA POSITIVE",
@@ -142,7 +142,7 @@
     "crude_wti": {
       "value": 69.5,
       "unit": "$/bbl",
-      "period": "01 May 2026",
+      "period": "02 May 2026",
       "label": "WTI Crude Oil",
       "status": "good",
       "badge": "BENIGN",
@@ -151,31 +151,31 @@
       "warning": null
     },
     "gold": {
-      "value": 4567.0,
+      "value": 4610.0,
       "unit": "$/oz",
-      "period": "01 May 2026",
+      "period": "02 May 2026",
       "label": "Gold",
       "status": "warn",
       "badge": "RECORD HIGH",
-      "change": "$4567/oz \u2014 stooq.com",
+      "change": "$4610/oz \u2014 stooq.com",
       "dir": "fl",
-      "warning": "Gold at $4567 \u2014 elevated risk-off signal"
+      "warning": "Gold at $4610 \u2014 elevated risk-off signal"
     },
     "silver": {
-      "value": 73.3,
+      "value": 75.45,
       "unit": "$/oz",
-      "period": "01 May 2026",
+      "period": "02 May 2026",
       "label": "Silver",
       "status": "good",
       "badge": "INDUSTRIAL",
-      "change": "$73.3/oz  \u00b7  G/S ratio: 62x",
+      "change": "$75.45/oz  \u00b7  G/S ratio: 61x",
       "dir": "fl",
       "warning": null
     },
     "copper": {
       "value": 4.62,
       "unit": "$/lb",
-      "period": "01 May 2026",
+      "period": "02 May 2026",
       "label": "Copper (Dr. Copper)",
       "status": "good",
       "badge": "GROWTH OK",
@@ -186,7 +186,7 @@
     "dxy": {
       "value": 99.1,
       "unit": "",
-      "period": "01 May 2026",
+      "period": "02 May 2026",
       "label": "US Dollar Index (DXY)",
       "status": "good",
       "badge": "EM POSITIVE",
@@ -197,7 +197,7 @@
     "fed_rate": {
       "value": 3.64,
       "unit": "%",
-      "period": "01 May 2026",
+      "period": "02 May 2026",
       "label": "Fed Funds Rate",
       "status": "good",
       "badge": "NEUTRAL",
@@ -206,31 +206,31 @@
       "warning": null
     },
     "us10y": {
-      "value": 4.42,
+      "value": 4.4,
       "unit": "%",
-      "period": "01 May 2026",
+      "period": "02 May 2026",
       "label": "US 10Y Treasury Yield",
       "status": "good",
       "badge": "NORMAL",
-      "change": "4.42%",
+      "change": "4.4%",
       "dir": "fl",
       "warning": null
     },
     "us_vix": {
-      "value": 18.8,
+      "value": 16.9,
       "unit": "",
-      "period": "01 May 2026",
+      "period": "02 May 2026",
       "label": "VIX (US Fear Index)",
       "status": "good",
       "badge": "CALM",
-      "change": "US VIX: 18.8",
+      "change": "US VIX: 16.9",
       "dir": "fl",
       "warning": null
     },
     "us_nfp": {
       "value": 178.0,
       "unit": "K",
-      "period": "01 May 2026",
+      "period": "02 May 2026",
       "label": "US Non-Farm Payrolls (Monthly)",
       "status": "good",
       "badge": "SOLID",
@@ -241,7 +241,7 @@
     "us_unemp": {
       "value": 4.3,
       "unit": "%",
-      "period": "01 May 2026",
+      "period": "02 May 2026",
       "label": "US Unemployment Rate",
       "status": "good",
       "badge": "FULL EMPLOYMENT",
@@ -2008,8 +2008,8 @@
     }
   },
   "flows": {
-    "date": "01 May 2026",
-    "updated": "2026-05-01T10:58:55Z",
+    "date": "02 May 2026",
+    "updated": "2026-05-02T05:53:58Z",
     "categories": [
       {
         "category": "DII",
@@ -2033,7 +2033,7 @@
     "summary": {
       "fii_daily_net": -8047.86,
       "dii_daily_net": 3487.1,
-      "date": "01 May 2026",
+      "date": "02 May 2026",
       "note": "NSE provisional daily data"
     }
   },
