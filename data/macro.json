@@ -1,6 +1,6 @@
 {
-  "updated": "2026-05-15T11:45:35Z",
-  "updated_ist": "15 May 2026 \u00b7 17:15 IST",
+  "updated": "2026-05-16T06:11:09Z",
+  "updated_ist": "16 May 2026 \u00b7 11:41 IST",
   "version": "3.1",
   "indicators": {
     "gdp": {
@@ -54,7 +54,7 @@
     "repo": {
       "value": 6.0,
       "unit": "%",
-      "period": "15 May 2026",
+      "period": "16 May 2026",
       "label": "Repo Rate",
       "status": "good",
       "badge": "ACCOMMODATIVE",
@@ -65,7 +65,7 @@
     "gsec": {
       "value": 6.74,
       "unit": "%",
-      "period": "15 May 2026",
+      "period": "16 May 2026",
       "label": "10Y G-Sec Yield",
       "status": "good",
       "badge": "NORMAL",
@@ -76,18 +76,18 @@
     "inrusd": {
       "value": 84.3,
       "unit": "\u20b9",
-      "period": "15 May 2026",
+      "period": "16 May 2026",
       "label": "INR / USD",
       "status": "good",
       "badge": "STABLE",
-      "change": "RBI Reference Rate \u00b7 15 May 2026",
+      "change": "RBI Reference Rate \u00b7 16 May 2026",
       "dir": "fl",
       "warning": null
     },
     "nifty50_lvl": {
       "value": 23643.5,
       "unit": "",
-      "period": "15 May 2026",
+      "period": "16 May 2026",
       "label": "Nifty 50 Level",
       "status": "good",
       "badge": "LIVE",
@@ -98,7 +98,7 @@
     "nifty_pe": {
       "value": 20.59,
       "unit": "x",
-      "period": "15 May 2026",
+      "period": "16 May 2026",
       "label": "Nifty 50 P/E",
       "status": "good",
       "badge": "FAIR",
@@ -109,7 +109,7 @@
     "nifty_pb": {
       "value": 3.24,
       "unit": "x",
-      "period": "15 May 2026",
+      "period": "16 May 2026",
       "label": "Nifty 50 P/B",
       "status": "good",
       "badge": "FAIR",
@@ -120,7 +120,7 @@
     "india_vix": {
       "value": 18.79,
       "unit": "",
-      "period": "15 May 2026",
+      "period": "16 May 2026",
       "label": "India VIX",
       "status": "good",
       "badge": "LOW FEAR",
@@ -131,7 +131,7 @@
     "brent": {
       "value": 74.0,
       "unit": "$/bbl",
-      "period": "15 May 2026",
+      "period": "16 May 2026",
       "label": "Brent Crude Oil",
       "status": "good",
       "badge": "INDIA POSITIVE",
@@ -142,7 +142,7 @@
     "crude_wti": {
       "value": 69.5,
       "unit": "$/bbl",
-      "period": "15 May 2026",
+      "period": "16 May 2026",
       "label": "WTI Crude Oil",
       "status": "good",
       "badge": "BENIGN",
@@ -151,31 +151,31 @@
       "warning": null
     },
     "gold": {
-      "value": 4553.0,
+      "value": 4546.0,
       "unit": "$/oz",
-      "period": "15 May 2026",
+      "period": "16 May 2026",
       "label": "Gold",
       "status": "warn",
       "badge": "RECORD HIGH",
-      "change": "$4553/oz \u2014 stooq.com",
+      "change": "$4546/oz \u2014 stooq.com",
       "dir": "fl",
-      "warning": "Gold at $4553 \u2014 elevated risk-off signal"
+      "warning": "Gold at $4546 \u2014 elevated risk-off signal"
     },
     "silver": {
-      "value": 78.41,
+      "value": 76.3,
       "unit": "$/oz",
-      "period": "15 May 2026",
+      "period": "16 May 2026",
       "label": "Silver",
       "status": "good",
       "badge": "INDUSTRIAL",
-      "change": "$78.41/oz  \u00b7  G/S ratio: 58x",
+      "change": "$76.3/oz  \u00b7  G/S ratio: 60x",
       "dir": "fl",
       "warning": null
     },
     "copper": {
       "value": 4.62,
       "unit": "$/lb",
-      "period": "15 May 2026",
+      "period": "16 May 2026",
       "label": "Copper (Dr. Copper)",
       "status": "good",
       "badge": "GROWTH OK",
@@ -186,7 +186,7 @@
     "dxy": {
       "value": 99.1,
       "unit": "",
-      "period": "15 May 2026",
+      "period": "16 May 2026",
       "label": "US Dollar Index (DXY)",
       "status": "good",
       "badge": "EM POSITIVE",
@@ -197,7 +197,7 @@
     "fed_rate": {
       "value": 3.64,
       "unit": "%",
-      "period": "15 May 2026",
+      "period": "16 May 2026",
       "label": "Fed Funds Rate",
       "status": "good",
       "badge": "NEUTRAL",
@@ -206,31 +206,31 @@
       "warning": null
     },
     "us10y": {
-      "value": 4.46,
+      "value": 4.47,
       "unit": "%",
-      "period": "15 May 2026",
+      "period": "16 May 2026",
       "label": "US 10Y Treasury Yield",
       "status": "good",
       "badge": "NORMAL",
-      "change": "4.46%",
+      "change": "4.47%",
       "dir": "fl",
       "warning": null
     },
     "us_vix": {
-      "value": 17.9,
+      "value": 17.3,
       "unit": "",
-      "period": "15 May 2026",
+      "period": "16 May 2026",
       "label": "VIX (US Fear Index)",
       "status": "good",
       "badge": "CALM",
-      "change": "US VIX: 17.9",
+      "change": "US VIX: 17.3",
       "dir": "fl",
       "warning": null
     },
     "us_nfp": {
       "value": 115.0,
       "unit": "K",
-      "period": "15 May 2026",
+      "period": "16 May 2026",
       "label": "US Non-Farm Payrolls (Monthly)",
       "status": "warn",
       "badge": "SOFT",
@@ -241,7 +241,7 @@
     "us_unemp": {
       "value": 4.3,
       "unit": "%",
-      "period": "15 May 2026",
+      "period": "16 May 2026",
       "label": "US Unemployment Rate",
       "status": "good",
       "badge": "FULL EMPLOYMENT",
@@ -2060,32 +2060,32 @@
     }
   },
   "flows": {
-    "date": "15 May 2026",
-    "updated": "2026-05-15T11:45:41Z",
+    "date": "16 May 2026",
+    "updated": "2026-05-16T06:11:15Z",
     "categories": [
       {
         "category": "DII",
-        "buy": 18255.96,
-        "sell": 17571.63,
-        "net": 684.33
+        "buy": 14961.88,
+        "sell": 16920.7,
+        "net": -1958.82
       },
       {
         "category": "FII/FPI",
-        "buy": 17350.56,
-        "sell": 17163.1,
-        "net": 187.46
+        "buy": 16299.6,
+        "sell": 14970.43,
+        "net": 1329.17
       }
     ],
-    "fii_buy": 17350.56,
-    "fii_sell": 17163.1,
-    "fii_net": 187.46,
-    "dii_buy": 18255.96,
-    "dii_sell": 17571.63,
-    "dii_net": 684.33,
+    "fii_buy": 16299.6,
+    "fii_sell": 14970.43,
+    "fii_net": 1329.17,
+    "dii_buy": 14961.88,
+    "dii_sell": 16920.7,
+    "dii_net": -1958.82,
     "summary": {
-      "fii_daily_net": 187.46,
-      "dii_daily_net": 684.33,
-      "date": "15 May 2026",
+      "fii_daily_net": 1329.17,
+      "dii_daily_net": -1958.82,
+      "date": "16 May 2026",
       "note": "NSE provisional daily data"
     }
   },
