@@ -1,6 +1,6 @@
 {
-  "updated": "2026-06-06T06:42:21Z",
-  "updated_ist": "06 Jun 2026 \u00b7 12:12 IST",
+  "updated": "2026-06-06T11:13:20Z",
+  "updated_ist": "06 Jun 2026 \u00b7 16:43 IST",
   "version": "3.1",
   "indicators": {
     "gdp": {
@@ -2061,7 +2061,7 @@
   },
   "flows": {
     "date": "06 Jun 2026",
-    "updated": "2026-06-06T06:42:27Z",
+    "updated": "2026-06-06T11:13:26Z",
     "categories": [
       {
         "category": "DII",
@@ -2095,29 +2095,9 @@
       "value": 6.49,
       "year": "2024"
     },
-    "CHN": {
-      "name": "China",
-      "value": 4.98,
-      "year": "2024"
-    },
-    "USA": {
-      "name": "USA",
-      "value": 2.79,
-      "year": "2024"
-    },
     "EMU": {
       "name": "Eurozone",
       "value": 0.91,
-      "year": "2024"
-    },
-    "JPN": {
-      "name": "Japan",
-      "value": 0.1,
-      "year": "2024"
-    },
-    "GBR": {
-      "name": "UK",
-      "value": 1.13,
       "year": "2024"
     },
     "WLD": {
