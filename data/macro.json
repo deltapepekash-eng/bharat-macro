@@ -1,6 +1,6 @@
 {
-  "updated": "2026-06-19T13:24:23Z",
-  "updated_ist": "19 Jun 2026 \u00b7 18:54 IST",
+  "updated": "2026-06-20T07:11:57Z",
+  "updated_ist": "20 Jun 2026 \u00b7 12:41 IST",
   "version": "3.1",
   "indicators": {
     "gdp": {
@@ -54,7 +54,7 @@
     "repo": {
       "value": 6.0,
       "unit": "%",
-      "period": "19 Jun 2026",
+      "period": "20 Jun 2026",
       "label": "Repo Rate",
       "status": "good",
       "badge": "ACCOMMODATIVE",
@@ -65,7 +65,7 @@
     "gsec": {
       "value": 6.74,
       "unit": "%",
-      "period": "19 Jun 2026",
+      "period": "20 Jun 2026",
       "label": "10Y G-Sec Yield",
       "status": "good",
       "badge": "NORMAL",
@@ -76,18 +76,18 @@
     "inrusd": {
       "value": 84.3,
       "unit": "\u20b9",
-      "period": "19 Jun 2026",
+      "period": "20 Jun 2026",
       "label": "INR / USD",
       "status": "good",
       "badge": "STABLE",
-      "change": "RBI Reference Rate \u00b7 19 Jun 2026",
+      "change": "RBI Reference Rate \u00b7 20 Jun 2026",
       "dir": "fl",
       "warning": null
     },
     "nifty50_lvl": {
       "value": 24013.1,
       "unit": "",
-      "period": "19 Jun 2026",
+      "period": "20 Jun 2026",
       "label": "Nifty 50 Level",
       "status": "good",
       "badge": "LIVE",
@@ -98,7 +98,7 @@
     "nifty_pe": {
       "value": 20.71,
       "unit": "x",
-      "period": "19 Jun 2026",
+      "period": "20 Jun 2026",
       "label": "Nifty 50 P/E",
       "status": "good",
       "badge": "FAIR",
@@ -109,7 +109,7 @@
     "nifty_pb": {
       "value": 3.16,
       "unit": "x",
-      "period": "19 Jun 2026",
+      "period": "20 Jun 2026",
       "label": "Nifty 50 P/B",
       "status": "good",
       "badge": "FAIR",
@@ -120,7 +120,7 @@
     "india_vix": {
       "value": 12.97,
       "unit": "",
-      "period": "19 Jun 2026",
+      "period": "20 Jun 2026",
       "label": "India VIX",
       "status": "good",
       "badge": "LOW FEAR",
@@ -131,7 +131,7 @@
     "brent": {
       "value": 74.0,
       "unit": "$/bbl",
-      "period": "19 Jun 2026",
+      "period": "20 Jun 2026",
       "label": "Brent Crude Oil",
       "status": "good",
       "badge": "INDIA POSITIVE",
@@ -142,7 +142,7 @@
     "crude_wti": {
       "value": 69.5,
       "unit": "$/bbl",
-      "period": "19 Jun 2026",
+      "period": "20 Jun 2026",
       "label": "WTI Crude Oil",
       "status": "good",
       "badge": "BENIGN",
@@ -153,7 +153,7 @@
     "gold": {
       "value": 3340.0,
       "unit": "$/oz",
-      "period": "19 Jun 2026",
+      "period": "20 Jun 2026",
       "label": "Gold",
       "status": "warn",
       "badge": "RECORD HIGH",
@@ -164,7 +164,7 @@
     "silver": {
       "value": 32.8,
       "unit": "$/oz",
-      "period": "19 Jun 2026",
+      "period": "20 Jun 2026",
       "label": "Silver",
       "status": "good",
       "badge": "INDUSTRIAL",
@@ -175,7 +175,7 @@
     "copper": {
       "value": 4.62,
       "unit": "$/lb",
-      "period": "19 Jun 2026",
+      "period": "20 Jun 2026",
       "label": "Copper (Dr. Copper)",
       "status": "good",
       "badge": "GROWTH OK",
@@ -186,7 +186,7 @@
     "dxy": {
       "value": 99.1,
       "unit": "",
-      "period": "19 Jun 2026",
+      "period": "20 Jun 2026",
       "label": "US Dollar Index (DXY)",
       "status": "good",
       "badge": "EM POSITIVE",
@@ -197,7 +197,7 @@
     "fed_rate": {
       "value": 3.63,
       "unit": "%",
-      "period": "19 Jun 2026",
+      "period": "20 Jun 2026",
       "label": "Fed Funds Rate",
       "status": "good",
       "badge": "NEUTRAL",
@@ -208,7 +208,7 @@
     "us10y": {
       "value": 4.49,
       "unit": "%",
-      "period": "19 Jun 2026",
+      "period": "20 Jun 2026",
       "label": "US 10Y Treasury Yield",
       "status": "good",
       "badge": "NORMAL",
@@ -219,7 +219,7 @@
     "us_vix": {
       "value": 18.4,
       "unit": "",
-      "period": "19 Jun 2026",
+      "period": "20 Jun 2026",
       "label": "VIX (US Fear Index)",
       "status": "good",
       "badge": "CALM",
@@ -230,7 +230,7 @@
     "us_nfp": {
       "value": 172.0,
       "unit": "K",
-      "period": "19 Jun 2026",
+      "period": "20 Jun 2026",
       "label": "US Non-Farm Payrolls (Monthly)",
       "status": "good",
       "badge": "SOLID",
@@ -241,7 +241,7 @@
     "us_unemp": {
       "value": 4.3,
       "unit": "%",
-      "period": "19 Jun 2026",
+      "period": "20 Jun 2026",
       "label": "US Unemployment Rate",
       "status": "good",
       "badge": "FULL EMPLOYMENT",
@@ -2060,8 +2060,8 @@
     }
   },
   "flows": {
-    "date": "19 Jun 2026",
-    "updated": "2026-06-19T13:24:29Z",
+    "date": "20 Jun 2026",
+    "updated": "2026-06-20T07:12:03Z",
     "categories": [
       {
         "category": "DII",
@@ -2085,7 +2085,7 @@
     "summary": {
       "fii_daily_net": 4859.07,
       "dii_daily_net": -1159.64,
-      "date": "19 Jun 2026",
+      "date": "20 Jun 2026",
       "note": "NSE provisional daily data"
     }
   },
