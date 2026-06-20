@@ -1,6 +1,6 @@
 {
-  "updated": "2026-06-20T07:11:57Z",
-  "updated_ist": "20 Jun 2026 \u00b7 12:41 IST",
+  "updated": "2026-06-20T11:48:22Z",
+  "updated_ist": "20 Jun 2026 \u00b7 17:18 IST",
   "version": "3.1",
   "indicators": {
     "gdp": {
@@ -2061,7 +2061,7 @@
   },
   "flows": {
     "date": "20 Jun 2026",
-    "updated": "2026-06-20T07:12:03Z",
+    "updated": "2026-06-20T11:48:28Z",
     "categories": [
       {
         "category": "DII",
@@ -2118,11 +2118,6 @@
     "GBR": {
       "name": "UK",
       "value": 1.13,
-      "year": "2024"
-    },
-    "WLD": {
-      "name": "World",
-      "value": 2.87,
       "year": "2024"
     }
   },
