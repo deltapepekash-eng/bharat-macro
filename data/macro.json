@@ -1,6 +1,6 @@
 {
-  "updated": "2026-06-26T07:07:07Z",
-  "updated_ist": "26 Jun 2026 \u00b7 12:37 IST",
+  "updated": "2026-06-26T12:04:43Z",
+  "updated_ist": "26 Jun 2026 \u00b7 17:34 IST",
   "version": "3.1",
   "indicators": {
     "gdp": {
@@ -41,9 +41,9 @@
       }
     },
     "cpi": {
-      "value": 4.6,
+      "value": 4.95,
       "unit": "%",
-      "period": "Latest",
+      "period": "2024",
       "label": "CPI Inflation (Headline)",
       "status": "good",
       "badge": "IN BAND",
@@ -2061,7 +2061,7 @@
   },
   "flows": {
     "date": "26 Jun 2026",
-    "updated": "2026-06-26T07:07:12Z",
+    "updated": "2026-06-26T12:04:49Z",
     "categories": [
       {
         "category": "DII",
