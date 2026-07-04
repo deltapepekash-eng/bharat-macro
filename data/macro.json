@@ -1,6 +1,6 @@
 {
-  "updated": "2026-07-04T06:34:19Z",
-  "updated_ist": "04 Jul 2026 \u00b7 12:04 IST",
+  "updated": "2026-07-04T11:14:31Z",
+  "updated_ist": "04 Jul 2026 \u00b7 16:44 IST",
   "version": "3.1",
   "indicators": {
     "gdp": {
@@ -12,33 +12,7 @@
       "badge": "STRONG",
       "change": "7.57% YoY",
       "dir": "up",
-      "warning": null,
-      "history": {
-        "labels": [
-          "2016",
-          "2017",
-          "2018",
-          "2019",
-          "2020",
-          "2021",
-          "2022",
-          "2023",
-          "2024",
-          "2025"
-        ],
-        "values": [
-          8.26,
-          6.8,
-          6.45,
-          3.87,
-          -5.78,
-          9.69,
-          7.61,
-          7.21,
-          7.1,
-          7.57
-        ]
-      }
+      "warning": null
     },
     "cpi": {
       "value": 2.4,
@@ -2061,7 +2035,7 @@
   },
   "flows": {
     "date": "04 Jul 2026",
-    "updated": "2026-07-04T06:34:25Z",
+    "updated": "2026-07-04T11:14:36Z",
     "categories": [
       {
         "category": "DII",
@@ -2100,14 +2074,14 @@
       "value": 4.96,
       "year": "2025"
     },
-    "USA": {
-      "name": "USA",
-      "value": 2.16,
-      "year": "2025"
-    },
     "EMU": {
       "name": "Eurozone",
       "value": 1.41,
+      "year": "2025"
+    },
+    "JPN": {
+      "name": "Japan",
+      "value": 1.19,
       "year": "2025"
     },
     "GBR": {
