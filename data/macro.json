@@ -1,16 +1,16 @@
 {
-  "updated": "2026-07-10T12:16:22Z",
-  "updated_ist": "10 Jul 2026 \u00b7 17:46 IST",
+  "updated": "2026-07-11T05:57:20Z",
+  "updated_ist": "11 Jul 2026 \u00b7 11:27 IST",
   "version": "3.1",
   "indicators": {
     "gdp": {
-      "value": 7.57,
+      "value": 6.4,
       "unit": "%",
-      "period": "2025",
+      "period": "FY25",
       "label": "GDP Growth (YoY)",
       "status": "good",
-      "badge": "STRONG",
-      "change": "7.57% YoY",
+      "badge": "NORMAL",
+      "change": "6.4% YoY",
       "dir": "up",
       "warning": null,
       "history": {
@@ -41,9 +41,9 @@
       }
     },
     "cpi": {
-      "value": 2.4,
+      "value": 4.6,
       "unit": "%",
-      "period": "2025",
+      "period": "Latest",
       "label": "CPI Inflation (Headline)",
       "status": "good",
       "badge": "IN BAND",
@@ -54,7 +54,7 @@
     "repo": {
       "value": 6.0,
       "unit": "%",
-      "period": "10 Jul 2026",
+      "period": "11 Jul 2026",
       "label": "Repo Rate",
       "status": "good",
       "badge": "ACCOMMODATIVE",
@@ -65,7 +65,7 @@
     "gsec": {
       "value": 6.74,
       "unit": "%",
-      "period": "10 Jul 2026",
+      "period": "11 Jul 2026",
       "label": "10Y G-Sec Yield",
       "status": "good",
       "badge": "NORMAL",
@@ -76,18 +76,18 @@
     "inrusd": {
       "value": 84.3,
       "unit": "\u20b9",
-      "period": "10 Jul 2026",
+      "period": "11 Jul 2026",
       "label": "INR / USD",
       "status": "good",
       "badge": "STABLE",
-      "change": "RBI Reference Rate \u00b7 10 Jul 2026",
+      "change": "RBI Reference Rate \u00b7 11 Jul 2026",
       "dir": "fl",
       "warning": null
     },
     "nifty50_lvl": {
       "value": 24206.9,
       "unit": "",
-      "period": "10 Jul 2026",
+      "period": "11 Jul 2026",
       "label": "Nifty 50 Level",
       "status": "good",
       "badge": "LIVE",
@@ -98,7 +98,7 @@
     "nifty_pe": {
       "value": 20.87,
       "unit": "x",
-      "period": "10 Jul 2026",
+      "period": "11 Jul 2026",
       "label": "Nifty 50 P/E",
       "status": "good",
       "badge": "FAIR",
@@ -109,7 +109,7 @@
     "nifty_pb": {
       "value": 3.15,
       "unit": "x",
-      "period": "10 Jul 2026",
+      "period": "11 Jul 2026",
       "label": "Nifty 50 P/B",
       "status": "good",
       "badge": "FAIR",
@@ -120,7 +120,7 @@
     "india_vix": {
       "value": 12.25,
       "unit": "",
-      "period": "10 Jul 2026",
+      "period": "11 Jul 2026",
       "label": "India VIX",
       "status": "good",
       "badge": "LOW FEAR",
@@ -131,7 +131,7 @@
     "brent": {
       "value": 74.0,
       "unit": "$/bbl",
-      "period": "10 Jul 2026",
+      "period": "11 Jul 2026",
       "label": "Brent Crude Oil",
       "status": "good",
       "badge": "INDIA POSITIVE",
@@ -142,7 +142,7 @@
     "crude_wti": {
       "value": 69.5,
       "unit": "$/bbl",
-      "period": "10 Jul 2026",
+      "period": "11 Jul 2026",
       "label": "WTI Crude Oil",
       "status": "good",
       "badge": "BENIGN",
@@ -153,7 +153,7 @@
     "gold": {
       "value": 3340.0,
       "unit": "$/oz",
-      "period": "10 Jul 2026",
+      "period": "11 Jul 2026",
       "label": "Gold",
       "status": "warn",
       "badge": "RECORD HIGH",
@@ -164,7 +164,7 @@
     "silver": {
       "value": 32.8,
       "unit": "$/oz",
-      "period": "10 Jul 2026",
+      "period": "11 Jul 2026",
       "label": "Silver",
       "status": "good",
       "badge": "INDUSTRIAL",
@@ -175,7 +175,7 @@
     "copper": {
       "value": 4.62,
       "unit": "$/lb",
-      "period": "10 Jul 2026",
+      "period": "11 Jul 2026",
       "label": "Copper (Dr. Copper)",
       "status": "good",
       "badge": "GROWTH OK",
@@ -186,7 +186,7 @@
     "dxy": {
       "value": 99.1,
       "unit": "",
-      "period": "10 Jul 2026",
+      "period": "11 Jul 2026",
       "label": "US Dollar Index (DXY)",
       "status": "good",
       "badge": "EM POSITIVE",
@@ -197,7 +197,7 @@
     "fed_rate": {
       "value": 3.63,
       "unit": "%",
-      "period": "10 Jul 2026",
+      "period": "11 Jul 2026",
       "label": "Fed Funds Rate",
       "status": "good",
       "badge": "NEUTRAL",
@@ -206,31 +206,31 @@
       "warning": null
     },
     "us10y": {
-      "value": 4.56,
+      "value": 4.54,
       "unit": "%",
-      "period": "10 Jul 2026",
+      "period": "11 Jul 2026",
       "label": "US 10Y Treasury Yield",
       "status": "warn",
       "badge": "WATCH",
-      "change": "4.56%",
+      "change": "4.54%",
       "dir": "fl",
-      "warning": "US 10Y 4.56% \u2014 FII outflow pressure on India"
+      "warning": "US 10Y 4.54% \u2014 FII outflow pressure on India"
     },
     "us_vix": {
-      "value": 16.9,
+      "value": 15.8,
       "unit": "",
-      "period": "10 Jul 2026",
+      "period": "11 Jul 2026",
       "label": "VIX (US Fear Index)",
       "status": "good",
       "badge": "CALM",
-      "change": "US VIX: 16.9",
+      "change": "US VIX: 15.8",
       "dir": "fl",
       "warning": null
     },
     "us_nfp": {
       "value": 57.0,
       "unit": "K",
-      "period": "10 Jul 2026",
+      "period": "11 Jul 2026",
       "label": "US Non-Farm Payrolls (Monthly)",
       "status": "warn",
       "badge": "SOFT",
@@ -241,7 +241,7 @@
     "us_unemp": {
       "value": 4.2,
       "unit": "%",
-      "period": "10 Jul 2026",
+      "period": "11 Jul 2026",
       "label": "US Unemployment Rate",
       "status": "good",
       "badge": "FULL EMPLOYMENT",
@@ -2060,41 +2060,36 @@
     }
   },
   "flows": {
-    "date": "10 Jul 2026",
-    "updated": "2026-07-10T12:16:27Z",
+    "date": "11 Jul 2026",
+    "updated": "2026-07-11T05:57:26Z",
     "categories": [
       {
         "category": "DII",
-        "buy": 18302.87,
-        "sell": 16245.08,
-        "net": 2057.79
+        "buy": 17171.75,
+        "sell": 15152.07,
+        "net": 2019.68
       },
       {
         "category": "FII/FPI",
-        "buy": 14388.41,
-        "sell": 14921.27,
-        "net": -532.86
+        "buy": 15318.07,
+        "sell": 12714.35,
+        "net": 2603.72
       }
     ],
-    "fii_buy": 14388.41,
-    "fii_sell": 14921.27,
-    "fii_net": -532.86,
-    "dii_buy": 18302.87,
-    "dii_sell": 16245.08,
-    "dii_net": 2057.79,
+    "fii_buy": 15318.07,
+    "fii_sell": 12714.35,
+    "fii_net": 2603.72,
+    "dii_buy": 17171.75,
+    "dii_sell": 15152.07,
+    "dii_net": 2019.68,
     "summary": {
-      "fii_daily_net": -532.86,
-      "dii_daily_net": 2057.79,
-      "date": "10 Jul 2026",
+      "fii_daily_net": 2603.72,
+      "dii_daily_net": 2019.68,
+      "date": "11 Jul 2026",
       "note": "NSE provisional daily data"
     }
   },
   "world_gdp": {
-    "IND": {
-      "name": "India",
-      "value": 7.57,
-      "year": "2025"
-    },
     "CHN": {
       "name": "China",
       "value": 4.96,
@@ -2113,6 +2108,11 @@
     "JPN": {
       "name": "Japan",
       "value": 1.19,
+      "year": "2025"
+    },
+    "GBR": {
+      "name": "UK",
+      "value": 1.39,
       "year": "2025"
     },
     "WLD": {
