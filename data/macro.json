@@ -1,16 +1,16 @@
 {
-  "updated": "2026-07-11T05:57:20Z",
-  "updated_ist": "11 Jul 2026 \u00b7 11:27 IST",
+  "updated": "2026-07-11T10:49:18Z",
+  "updated_ist": "11 Jul 2026 \u00b7 16:19 IST",
   "version": "3.1",
   "indicators": {
     "gdp": {
-      "value": 6.4,
+      "value": 7.57,
       "unit": "%",
-      "period": "FY25",
+      "period": "2025",
       "label": "GDP Growth (YoY)",
       "status": "good",
-      "badge": "NORMAL",
-      "change": "6.4% YoY",
+      "badge": "STRONG",
+      "change": "7.57% YoY",
       "dir": "up",
       "warning": null,
       "history": {
@@ -41,9 +41,9 @@
       }
     },
     "cpi": {
-      "value": 4.6,
+      "value": 2.4,
       "unit": "%",
-      "period": "Latest",
+      "period": "2025",
       "label": "CPI Inflation (Headline)",
       "status": "good",
       "badge": "IN BAND",
@@ -2061,7 +2061,7 @@
   },
   "flows": {
     "date": "11 Jul 2026",
-    "updated": "2026-07-11T05:57:26Z",
+    "updated": "2026-07-11T10:49:25Z",
     "categories": [
       {
         "category": "DII",
@@ -2090,6 +2090,11 @@
     }
   },
   "world_gdp": {
+    "IND": {
+      "name": "India",
+      "value": 7.57,
+      "year": "2025"
+    },
     "CHN": {
       "name": "China",
       "value": 4.96,
