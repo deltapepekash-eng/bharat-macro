@@ -1,6 +1,6 @@
 {
-  "updated": "2026-07-18T10:53:07Z",
-  "updated_ist": "18 Jul 2026 \u00b7 16:23 IST",
+  "updated": "2026-07-18T17:09:04Z",
+  "updated_ist": "18 Jul 2026 \u00b7 22:39 IST",
   "version": "3.1",
   "indicators": {
     "gdp": {
@@ -2084,6 +2084,11 @@
     "JPN": {
       "name": "Japan",
       "value": 1.19,
+      "year": "2025"
+    },
+    "GBR": {
+      "name": "UK",
+      "value": 1.39,
       "year": "2025"
     },
     "WLD": {
