@@ -1,6 +1,6 @@
 {
-  "updated": "2026-07-18T05:42:21Z",
-  "updated_ist": "18 Jul 2026 \u00b7 11:12 IST",
+  "updated": "2026-07-18T10:53:07Z",
+  "updated_ist": "18 Jul 2026 \u00b7 16:23 IST",
   "version": "3.1",
   "indicators": {
     "gdp": {
@@ -2059,36 +2059,7 @@
       "dy": null
     }
   },
-  "flows": {
-    "date": "18 Jul 2026",
-    "updated": "2026-07-18T05:42:35Z",
-    "categories": [
-      {
-        "category": "DII",
-        "buy": 17180.08,
-        "sell": 16162.19,
-        "net": 1017.89
-      },
-      {
-        "category": "FII/FPI",
-        "buy": 14393.77,
-        "sell": 14770.18,
-        "net": -376.41
-      }
-    ],
-    "fii_buy": 14393.77,
-    "fii_sell": 14770.18,
-    "fii_net": -376.41,
-    "dii_buy": 17180.08,
-    "dii_sell": 16162.19,
-    "dii_net": 1017.89,
-    "summary": {
-      "fii_daily_net": -376.41,
-      "dii_daily_net": 1017.89,
-      "date": "18 Jul 2026",
-      "note": "NSE provisional daily data"
-    }
-  },
+  "flows": {},
   "world_gdp": {
     "IND": {
       "name": "India",
@@ -2113,11 +2084,6 @@
     "JPN": {
       "name": "Japan",
       "value": 1.19,
-      "year": "2025"
-    },
-    "GBR": {
-      "name": "UK",
-      "value": 1.39,
       "year": "2025"
     },
     "WLD": {
