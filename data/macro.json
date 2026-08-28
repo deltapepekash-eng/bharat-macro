@@ -1,6 +1,6 @@
 {
-  "updated": "2026-08-28T15:34:42Z",
-  "updated_ist": "28 Aug 2026 \u00b7 21:04 IST",
+  "updated": "2026-08-28T21:00:32Z",
+  "updated_ist": "29 Aug 2026 \u00b7 02:30 IST",
   "version": "3.1",
   "indicators": {
     "gdp": {
@@ -206,15 +206,15 @@
       "warning": null
     },
     "us10y": {
-      "value": 4.66,
+      "value": 4.67,
       "unit": "%",
       "period": "28 Aug 2026",
       "label": "US 10Y Treasury Yield",
       "status": "warn",
       "badge": "WATCH",
-      "change": "4.66%",
+      "change": "4.67%",
       "dir": "fl",
-      "warning": "US 10Y 4.66% \u2014 FII outflow pressure on India"
+      "warning": "US 10Y 4.67% \u2014 FII outflow pressure on India"
     },
     "us_vix": {
       "value": 14.5,
@@ -2061,7 +2061,7 @@
   },
   "flows": {
     "date": "28 Aug 2026",
-    "updated": "2026-08-28T15:34:47Z",
+    "updated": "2026-08-28T21:00:38Z",
     "categories": [
       {
         "category": "DII",
@@ -2093,11 +2093,6 @@
     "IND": {
       "name": "India",
       "value": 7.57,
-      "year": "2025"
-    },
-    "CHN": {
-      "name": "China",
-      "value": 4.96,
       "year": "2025"
     },
     "USA": {
