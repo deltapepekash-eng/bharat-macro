@@ -1,16 +1,16 @@
 {
-  "updated": "2026-10-02T09:58:41Z",
-  "updated_ist": "02 Oct 2026 \u00b7 15:28 IST",
+  "updated": "2026-10-02T15:59:14Z",
+  "updated_ist": "02 Oct 2026 \u00b7 21:29 IST",
   "version": "3.1",
   "indicators": {
     "gdp": {
-      "value": 7.57,
+      "value": 6.4,
       "unit": "%",
-      "period": "2025",
+      "period": "FY25",
       "label": "GDP Growth (YoY)",
       "status": "good",
-      "badge": "STRONG",
-      "change": "7.57% YoY",
+      "badge": "NORMAL",
+      "change": "6.4% YoY",
       "dir": "up",
       "warning": null,
       "history": {
@@ -217,35 +217,35 @@
       "warning": "US 10Y 5.29% \u2014 FII outflow pressure on India"
     },
     "us_vix": {
-      "value": 16.3,
+      "value": 16.4,
       "unit": "",
       "period": "02 Oct 2026",
       "label": "VIX (US Fear Index)",
       "status": "good",
       "badge": "CALM",
-      "change": "US VIX: 16.3",
+      "change": "US VIX: 16.4",
       "dir": "fl",
       "warning": null
     },
     "us_nfp": {
-      "value": 162.0,
+      "value": 29.0,
       "unit": "K",
       "period": "02 Oct 2026",
       "label": "US Non-Farm Payrolls (Monthly)",
-      "status": "good",
-      "badge": "SOLID",
-      "change": "+162K jobs added",
+      "status": "danger",
+      "badge": "WEAK",
+      "change": "+29K jobs added",
       "dir": "fl",
-      "warning": null
+      "warning": "NFP fell to 29K \u2014 labor market weakening"
     },
     "us_unemp": {
-      "value": 4.1,
+      "value": 4.2,
       "unit": "%",
       "period": "02 Oct 2026",
       "label": "US Unemployment Rate",
       "status": "good",
       "badge": "FULL EMPLOYMENT",
-      "change": "4.1%",
+      "change": "4.2%",
       "dir": "fl",
       "warning": null
     }
@@ -2061,7 +2061,7 @@
   },
   "flows": {
     "date": "02 Oct 2026",
-    "updated": "2026-10-02T09:58:47Z",
+    "updated": "2026-10-02T15:59:19Z",
     "categories": [
       {
         "category": "DII",
@@ -2090,11 +2090,6 @@
     }
   },
   "world_gdp": {
-    "IND": {
-      "name": "India",
-      "value": 7.57,
-      "year": "2025"
-    },
     "CHN": {
       "name": "China",
       "value": 4.96,
@@ -2126,6 +2121,6 @@
       "year": "2025"
     }
   },
-  "regime_score": 95,
+  "regime_score": 90,
   "regime": "RISK-ON"
 }
