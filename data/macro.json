@@ -1,16 +1,16 @@
 {
-  "updated": "2026-10-02T15:59:14Z",
-  "updated_ist": "02 Oct 2026 \u00b7 21:29 IST",
+  "updated": "2026-10-03T09:21:38Z",
+  "updated_ist": "03 Oct 2026 \u00b7 14:51 IST",
   "version": "3.1",
   "indicators": {
     "gdp": {
-      "value": 6.4,
+      "value": 7.57,
       "unit": "%",
-      "period": "FY25",
+      "period": "2025",
       "label": "GDP Growth (YoY)",
       "status": "good",
-      "badge": "NORMAL",
-      "change": "6.4% YoY",
+      "badge": "STRONG",
+      "change": "7.57% YoY",
       "dir": "up",
       "warning": null,
       "history": {
@@ -54,7 +54,7 @@
     "repo": {
       "value": 6.0,
       "unit": "%",
-      "period": "02 Oct 2026",
+      "period": "03 Oct 2026",
       "label": "Repo Rate",
       "status": "good",
       "badge": "ACCOMMODATIVE",
@@ -65,7 +65,7 @@
     "gsec": {
       "value": 6.74,
       "unit": "%",
-      "period": "02 Oct 2026",
+      "period": "03 Oct 2026",
       "label": "10Y G-Sec Yield",
       "status": "good",
       "badge": "NORMAL",
@@ -76,18 +76,18 @@
     "inrusd": {
       "value": 84.3,
       "unit": "\u20b9",
-      "period": "02 Oct 2026",
+      "period": "03 Oct 2026",
       "label": "INR / USD",
       "status": "good",
       "badge": "STABLE",
-      "change": "RBI Reference Rate \u00b7 02 Oct 2026",
+      "change": "RBI Reference Rate \u00b7 03 Oct 2026",
       "dir": "fl",
       "warning": null
     },
     "nifty50_lvl": {
       "value": 22421.95,
       "unit": "",
-      "period": "02 Oct 2026",
+      "period": "03 Oct 2026",
       "label": "Nifty 50 Level",
       "status": "good",
       "badge": "LIVE",
@@ -98,7 +98,7 @@
     "nifty_pe": {
       "value": 19.19,
       "unit": "x",
-      "period": "02 Oct 2026",
+      "period": "03 Oct 2026",
       "label": "Nifty 50 P/E",
       "status": "good",
       "badge": "FAIR",
@@ -109,7 +109,7 @@
     "nifty_pb": {
       "value": 2.75,
       "unit": "x",
-      "period": "02 Oct 2026",
+      "period": "03 Oct 2026",
       "label": "Nifty 50 P/B",
       "status": "good",
       "badge": "FAIR",
@@ -120,7 +120,7 @@
     "india_vix": {
       "value": 14.44,
       "unit": "",
-      "period": "02 Oct 2026",
+      "period": "03 Oct 2026",
       "label": "India VIX",
       "status": "good",
       "badge": "LOW FEAR",
@@ -131,7 +131,7 @@
     "brent": {
       "value": 74.0,
       "unit": "$/bbl",
-      "period": "02 Oct 2026",
+      "period": "03 Oct 2026",
       "label": "Brent Crude Oil",
       "status": "good",
       "badge": "INDIA POSITIVE",
@@ -142,7 +142,7 @@
     "crude_wti": {
       "value": 69.5,
       "unit": "$/bbl",
-      "period": "02 Oct 2026",
+      "period": "03 Oct 2026",
       "label": "WTI Crude Oil",
       "status": "good",
       "badge": "BENIGN",
@@ -153,7 +153,7 @@
     "gold": {
       "value": 3340.0,
       "unit": "$/oz",
-      "period": "02 Oct 2026",
+      "period": "03 Oct 2026",
       "label": "Gold",
       "status": "warn",
       "badge": "RECORD HIGH",
@@ -164,7 +164,7 @@
     "silver": {
       "value": 32.8,
       "unit": "$/oz",
-      "period": "02 Oct 2026",
+      "period": "03 Oct 2026",
       "label": "Silver",
       "status": "good",
       "badge": "INDUSTRIAL",
@@ -175,7 +175,7 @@
     "copper": {
       "value": 4.62,
       "unit": "$/lb",
-      "period": "02 Oct 2026",
+      "period": "03 Oct 2026",
       "label": "Copper (Dr. Copper)",
       "status": "good",
       "badge": "GROWTH OK",
@@ -186,7 +186,7 @@
     "dxy": {
       "value": 99.1,
       "unit": "",
-      "period": "02 Oct 2026",
+      "period": "03 Oct 2026",
       "label": "US Dollar Index (DXY)",
       "status": "good",
       "badge": "EM POSITIVE",
@@ -197,7 +197,7 @@
     "fed_rate": {
       "value": 3.75,
       "unit": "%",
-      "period": "02 Oct 2026",
+      "period": "03 Oct 2026",
       "label": "Fed Funds Rate",
       "status": "good",
       "badge": "NEUTRAL",
@@ -206,20 +206,20 @@
       "warning": null
     },
     "us10y": {
-      "value": 5.29,
+      "value": 5.24,
       "unit": "%",
-      "period": "02 Oct 2026",
+      "period": "03 Oct 2026",
       "label": "US 10Y Treasury Yield",
       "status": "warn",
       "badge": "WATCH",
-      "change": "5.29%",
+      "change": "5.24%",
       "dir": "fl",
-      "warning": "US 10Y 5.29% \u2014 FII outflow pressure on India"
+      "warning": "US 10Y 5.24% \u2014 FII outflow pressure on India"
     },
     "us_vix": {
       "value": 16.4,
       "unit": "",
-      "period": "02 Oct 2026",
+      "period": "03 Oct 2026",
       "label": "VIX (US Fear Index)",
       "status": "good",
       "badge": "CALM",
@@ -230,7 +230,7 @@
     "us_nfp": {
       "value": 29.0,
       "unit": "K",
-      "period": "02 Oct 2026",
+      "period": "03 Oct 2026",
       "label": "US Non-Farm Payrolls (Monthly)",
       "status": "danger",
       "badge": "WEAK",
@@ -241,7 +241,7 @@
     "us_unemp": {
       "value": 4.2,
       "unit": "%",
-      "period": "02 Oct 2026",
+      "period": "03 Oct 2026",
       "label": "US Unemployment Rate",
       "status": "good",
       "badge": "FULL EMPLOYMENT",
@@ -2060,8 +2060,8 @@
     }
   },
   "flows": {
-    "date": "02 Oct 2026",
-    "updated": "2026-10-02T15:59:19Z",
+    "date": "03 Oct 2026",
+    "updated": "2026-10-03T09:21:44Z",
     "categories": [
       {
         "category": "DII",
@@ -2085,11 +2085,16 @@
     "summary": {
       "fii_daily_net": -9484.22,
       "dii_daily_net": 10041.84,
-      "date": "02 Oct 2026",
+      "date": "03 Oct 2026",
       "note": "NSE provisional daily data"
     }
   },
   "world_gdp": {
+    "IND": {
+      "name": "India",
+      "value": 7.57,
+      "year": "2025"
+    },
     "CHN": {
       "name": "China",
       "value": 4.96,
