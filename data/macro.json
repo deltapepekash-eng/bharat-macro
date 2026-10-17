@@ -1,6 +1,6 @@
 {
-  "updated": "2026-10-17T07:58:14Z",
-  "updated_ist": "17 Oct 2026 \u00b7 13:28 IST",
+  "updated": "2026-10-17T13:17:06Z",
+  "updated_ist": "17 Oct 2026 \u00b7 18:47 IST",
   "version": "3.1",
   "indicators": {
     "gdp": {
@@ -2061,7 +2061,7 @@
   },
   "flows": {
     "date": "17 Oct 2026",
-    "updated": "2026-10-17T07:58:19Z",
+    "updated": "2026-10-17T13:17:12Z",
     "categories": [
       {
         "category": "DII",
@@ -2105,14 +2105,14 @@
       "value": 2.16,
       "year": "2025"
     },
-    "EMU": {
-      "name": "Eurozone",
-      "value": 1.41,
-      "year": "2025"
-    },
     "JPN": {
       "name": "Japan",
       "value": 1.19,
+      "year": "2025"
+    },
+    "GBR": {
+      "name": "UK",
+      "value": 1.39,
       "year": "2025"
     },
     "WLD": {
