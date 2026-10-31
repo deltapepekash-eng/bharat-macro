@@ -1,6 +1,6 @@
 {
-  "updated": "2026-10-30T16:17:16Z",
-  "updated_ist": "30 Oct 2026 \u00b7 21:47 IST",
+  "updated": "2026-10-31T09:52:52Z",
+  "updated_ist": "31 Oct 2026 \u00b7 15:22 IST",
   "version": "3.1",
   "indicators": {
     "gdp": {
@@ -54,7 +54,7 @@
     "repo": {
       "value": 6.0,
       "unit": "%",
-      "period": "30 Oct 2026",
+      "period": "31 Oct 2026",
       "label": "Repo Rate",
       "status": "good",
       "badge": "ACCOMMODATIVE",
@@ -65,7 +65,7 @@
     "gsec": {
       "value": 6.74,
       "unit": "%",
-      "period": "30 Oct 2026",
+      "period": "31 Oct 2026",
       "label": "10Y G-Sec Yield",
       "status": "good",
       "badge": "NORMAL",
@@ -76,18 +76,18 @@
     "inrusd": {
       "value": 84.3,
       "unit": "\u20b9",
-      "period": "30 Oct 2026",
+      "period": "31 Oct 2026",
       "label": "INR / USD",
       "status": "good",
       "badge": "STABLE",
-      "change": "RBI Reference Rate \u00b7 30 Oct 2026",
+      "change": "RBI Reference Rate \u00b7 31 Oct 2026",
       "dir": "fl",
       "warning": null
     },
     "nifty50_lvl": {
       "value": 23053.1,
       "unit": "",
-      "period": "30 Oct 2026",
+      "period": "31 Oct 2026",
       "label": "Nifty 50 Level",
       "status": "good",
       "badge": "LIVE",
@@ -98,7 +98,7 @@
     "nifty_pe": {
       "value": 19.3,
       "unit": "x",
-      "period": "30 Oct 2026",
+      "period": "31 Oct 2026",
       "label": "Nifty 50 P/E",
       "status": "good",
       "badge": "FAIR",
@@ -109,7 +109,7 @@
     "nifty_pb": {
       "value": 2.83,
       "unit": "x",
-      "period": "30 Oct 2026",
+      "period": "31 Oct 2026",
       "label": "Nifty 50 P/B",
       "status": "good",
       "badge": "FAIR",
@@ -120,7 +120,7 @@
     "india_vix": {
       "value": 15.45,
       "unit": "",
-      "period": "30 Oct 2026",
+      "period": "31 Oct 2026",
       "label": "India VIX",
       "status": "good",
       "badge": "LOW FEAR",
@@ -131,7 +131,7 @@
     "brent": {
       "value": 74.0,
       "unit": "$/bbl",
-      "period": "30 Oct 2026",
+      "period": "31 Oct 2026",
       "label": "Brent Crude Oil",
       "status": "good",
       "badge": "INDIA POSITIVE",
@@ -142,7 +142,7 @@
     "crude_wti": {
       "value": 69.5,
       "unit": "$/bbl",
-      "period": "30 Oct 2026",
+      "period": "31 Oct 2026",
       "label": "WTI Crude Oil",
       "status": "good",
       "badge": "BENIGN",
@@ -153,7 +153,7 @@
     "gold": {
       "value": 3340.0,
       "unit": "$/oz",
-      "period": "30 Oct 2026",
+      "period": "31 Oct 2026",
       "label": "Gold",
       "status": "warn",
       "badge": "RECORD HIGH",
@@ -164,7 +164,7 @@
     "silver": {
       "value": 32.8,
       "unit": "$/oz",
-      "period": "30 Oct 2026",
+      "period": "31 Oct 2026",
       "label": "Silver",
       "status": "good",
       "badge": "INDUSTRIAL",
@@ -175,7 +175,7 @@
     "copper": {
       "value": 4.62,
       "unit": "$/lb",
-      "period": "30 Oct 2026",
+      "period": "31 Oct 2026",
       "label": "Copper (Dr. Copper)",
       "status": "good",
       "badge": "GROWTH OK",
@@ -186,7 +186,7 @@
     "dxy": {
       "value": 99.1,
       "unit": "",
-      "period": "30 Oct 2026",
+      "period": "31 Oct 2026",
       "label": "US Dollar Index (DXY)",
       "status": "good",
       "badge": "EM POSITIVE",
@@ -197,7 +197,7 @@
     "fed_rate": {
       "value": 3.75,
       "unit": "%",
-      "period": "30 Oct 2026",
+      "period": "31 Oct 2026",
       "label": "Fed Funds Rate",
       "status": "good",
       "badge": "NEUTRAL",
@@ -206,20 +206,20 @@
       "warning": null
     },
     "us10y": {
-      "value": 5.05,
+      "value": 4.98,
       "unit": "%",
-      "period": "30 Oct 2026",
+      "period": "31 Oct 2026",
       "label": "US 10Y Treasury Yield",
       "status": "warn",
       "badge": "WATCH",
-      "change": "5.05%",
+      "change": "4.98%",
       "dir": "fl",
-      "warning": "US 10Y 5.05% \u2014 FII outflow pressure on India"
+      "warning": "US 10Y 4.98% \u2014 FII outflow pressure on India"
     },
     "us_vix": {
       "value": 17.2,
       "unit": "",
-      "period": "30 Oct 2026",
+      "period": "31 Oct 2026",
       "label": "VIX (US Fear Index)",
       "status": "good",
       "badge": "CALM",
@@ -230,7 +230,7 @@
     "us_nfp": {
       "value": 29.0,
       "unit": "K",
-      "period": "30 Oct 2026",
+      "period": "31 Oct 2026",
       "label": "US Non-Farm Payrolls (Monthly)",
       "status": "danger",
       "badge": "WEAK",
@@ -241,7 +241,7 @@
     "us_unemp": {
       "value": 4.2,
       "unit": "%",
-      "period": "30 Oct 2026",
+      "period": "31 Oct 2026",
       "label": "US Unemployment Rate",
       "status": "good",
       "badge": "FULL EMPLOYMENT",
@@ -2060,8 +2060,8 @@
     }
   },
   "flows": {
-    "date": "30 Oct 2026",
-    "updated": "2026-10-30T16:17:22Z",
+    "date": "31 Oct 2026",
+    "updated": "2026-10-31T09:52:58Z",
     "categories": [
       {
         "category": "DII",
@@ -2085,7 +2085,7 @@
     "summary": {
       "fii_daily_net": 3598.54,
       "dii_daily_net": -817.51,
-      "date": "30 Oct 2026",
+      "date": "31 Oct 2026",
       "note": "NSE provisional daily data"
     }
   },
