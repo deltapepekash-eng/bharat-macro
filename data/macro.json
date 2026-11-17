@@ -1,6 +1,6 @@
 {
-  "updated": "2026-11-17T12:17:55Z",
-  "updated_ist": "17 Nov 2026 \u00b7 17:47 IST",
+  "updated": "2026-11-17T18:47:31Z",
+  "updated_ist": "18 Nov 2026 \u00b7 00:17 IST",
   "version": "3.1",
   "indicators": {
     "gdp": {
@@ -217,13 +217,13 @@
       "warning": "US 10Y 5.15% \u2014 FII outflow pressure on India"
     },
     "us_vix": {
-      "value": 19.3,
+      "value": 22.9,
       "unit": "",
       "period": "17 Nov 2026",
       "label": "VIX (US Fear Index)",
-      "status": "good",
-      "badge": "CALM",
-      "change": "US VIX: 19.3",
+      "status": "warn",
+      "badge": "ELEVATED",
+      "change": "US VIX: 22.9",
       "dir": "fl",
       "warning": null
     },
@@ -2061,30 +2061,30 @@
   },
   "flows": {
     "date": "17 Nov 2026",
-    "updated": "2026-11-17T12:18:01Z",
+    "updated": "2026-11-17T18:47:37Z",
     "categories": [
       {
         "category": "DII",
-        "buy": 11752.03,
-        "sell": 15271.08,
-        "net": -3519.05
+        "buy": 14903.8,
+        "sell": 14706.87,
+        "net": 196.93
       },
       {
         "category": "FII/FPI",
-        "buy": 15636.88,
-        "sell": 10772.2,
-        "net": 4864.68
+        "buy": 19930.98,
+        "sell": 15735.6,
+        "net": 4195.38
       }
     ],
-    "fii_buy": 15636.88,
-    "fii_sell": 10772.2,
-    "fii_net": 4864.68,
-    "dii_buy": 11752.03,
-    "dii_sell": 15271.08,
-    "dii_net": -3519.05,
+    "fii_buy": 19930.98,
+    "fii_sell": 15735.6,
+    "fii_net": 4195.38,
+    "dii_buy": 14903.8,
+    "dii_sell": 14706.87,
+    "dii_net": 196.93,
     "summary": {
-      "fii_daily_net": 4864.68,
-      "dii_daily_net": -3519.05,
+      "fii_daily_net": 4195.38,
+      "dii_daily_net": 196.93,
       "date": "17 Nov 2026",
       "note": "NSE provisional daily data"
     }
@@ -2126,6 +2126,6 @@
       "year": "2025"
     }
   },
-  "regime_score": 95,
+  "regime_score": 92,
   "regime": "RISK-ON"
 }
