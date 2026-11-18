@@ -1,16 +1,16 @@
 {
-  "updated": "2026-11-18T12:03:35Z",
-  "updated_ist": "18 Nov 2026 \u00b7 17:33 IST",
+  "updated": "2026-11-18T18:26:43Z",
+  "updated_ist": "18 Nov 2026 \u00b7 23:56 IST",
   "version": "3.1",
   "indicators": {
     "gdp": {
-      "value": 6.4,
+      "value": 7.57,
       "unit": "%",
-      "period": "FY25",
+      "period": "2025",
       "label": "GDP Growth (YoY)",
       "status": "good",
-      "badge": "NORMAL",
-      "change": "6.4% YoY",
+      "badge": "STRONG",
+      "change": "7.57% YoY",
       "dir": "up",
       "warning": null,
       "history": {
@@ -217,15 +217,15 @@
       "warning": "US 10Y 5.12% \u2014 FII outflow pressure on India"
     },
     "us_vix": {
-      "value": 22.9,
+      "value": 25.5,
       "unit": "",
       "period": "18 Nov 2026",
       "label": "VIX (US Fear Index)",
       "status": "warn",
       "badge": "ELEVATED",
-      "change": "US VIX: 22.9",
+      "change": "US VIX: 25.5",
       "dir": "fl",
-      "warning": null
+      "warning": "US VIX 25.5 \u2014 risk-off, FII selling likely"
     },
     "us_nfp": {
       "value": 165.0,
@@ -2061,38 +2061,58 @@
   },
   "flows": {
     "date": "18 Nov 2026",
-    "updated": "2026-11-18T12:03:41Z",
+    "updated": "2026-11-18T18:26:49Z",
     "categories": [
       {
         "category": "DII",
-        "buy": 14903.8,
-        "sell": 14706.87,
-        "net": 196.93
+        "buy": 14602.25,
+        "sell": 17762.15,
+        "net": -3159.9
       },
       {
         "category": "FII/FPI",
-        "buy": 19930.98,
-        "sell": 15735.6,
-        "net": 4195.38
+        "buy": 17913.16,
+        "sell": 12046.38,
+        "net": 5866.78
       }
     ],
-    "fii_buy": 19930.98,
-    "fii_sell": 15735.6,
-    "fii_net": 4195.38,
-    "dii_buy": 14903.8,
-    "dii_sell": 14706.87,
-    "dii_net": 196.93,
+    "fii_buy": 17913.16,
+    "fii_sell": 12046.38,
+    "fii_net": 5866.78,
+    "dii_buy": 14602.25,
+    "dii_sell": 17762.15,
+    "dii_net": -3159.9,
     "summary": {
-      "fii_daily_net": 4195.38,
-      "dii_daily_net": 196.93,
+      "fii_daily_net": 5866.78,
+      "dii_daily_net": -3159.9,
       "date": "18 Nov 2026",
       "note": "NSE provisional daily data"
     }
   },
   "world_gdp": {
+    "IND": {
+      "name": "India",
+      "value": 7.57,
+      "year": "2025"
+    },
+    "CHN": {
+      "name": "China",
+      "value": 4.96,
+      "year": "2025"
+    },
+    "USA": {
+      "name": "USA",
+      "value": 2.16,
+      "year": "2025"
+    },
     "EMU": {
       "name": "Eurozone",
       "value": 1.41,
+      "year": "2025"
+    },
+    "JPN": {
+      "name": "Japan",
+      "value": 1.19,
       "year": "2025"
     }
   },
