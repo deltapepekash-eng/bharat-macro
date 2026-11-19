@@ -1,16 +1,16 @@
 {
-  "updated": "2026-11-19T11:59:12Z",
-  "updated_ist": "19 Nov 2026 \u00b7 17:29 IST",
+  "updated": "2026-11-19T18:41:58Z",
+  "updated_ist": "20 Nov 2026 \u00b7 00:11 IST",
   "version": "3.1",
   "indicators": {
     "gdp": {
-      "value": 6.4,
+      "value": 7.57,
       "unit": "%",
-      "period": "FY25",
+      "period": "2025",
       "label": "GDP Growth (YoY)",
       "status": "good",
-      "badge": "NORMAL",
-      "change": "6.4% YoY",
+      "badge": "STRONG",
+      "change": "7.57% YoY",
       "dir": "up",
       "warning": null,
       "history": {
@@ -41,9 +41,9 @@
       }
     },
     "cpi": {
-      "value": 4.6,
+      "value": 2.4,
       "unit": "%",
-      "period": "Latest",
+      "period": "2025",
       "label": "CPI Inflation (Headline)",
       "status": "good",
       "badge": "IN BAND",
@@ -217,15 +217,15 @@
       "warning": "US 10Y 5.1% \u2014 FII outflow pressure on India"
     },
     "us_vix": {
-      "value": 25.5,
+      "value": 24.6,
       "unit": "",
       "period": "19 Nov 2026",
       "label": "VIX (US Fear Index)",
       "status": "warn",
       "badge": "ELEVATED",
-      "change": "US VIX: 25.5",
+      "change": "US VIX: 24.6",
       "dir": "fl",
-      "warning": "US VIX 25.5 \u2014 risk-off, FII selling likely"
+      "warning": null
     },
     "us_nfp": {
       "value": 165.0,
@@ -2061,30 +2061,30 @@
   },
   "flows": {
     "date": "19 Nov 2026",
-    "updated": "2026-11-19T11:59:18Z",
+    "updated": "2026-11-19T18:42:04Z",
     "categories": [
       {
         "category": "DII",
-        "buy": 14602.25,
-        "sell": 17762.15,
-        "net": -3159.9
+        "buy": 17651.5,
+        "sell": 19008.07,
+        "net": -1356.57
       },
       {
         "category": "FII/FPI",
-        "buy": 17913.16,
-        "sell": 12046.38,
-        "net": 5866.78
+        "buy": 20706.95,
+        "sell": 13295.54,
+        "net": 7411.41
       }
     ],
-    "fii_buy": 17913.16,
-    "fii_sell": 12046.38,
-    "fii_net": 5866.78,
-    "dii_buy": 14602.25,
-    "dii_sell": 17762.15,
-    "dii_net": -3159.9,
+    "fii_buy": 20706.95,
+    "fii_sell": 13295.54,
+    "fii_net": 7411.41,
+    "dii_buy": 17651.5,
+    "dii_sell": 19008.07,
+    "dii_net": -1356.57,
     "summary": {
-      "fii_daily_net": 5866.78,
-      "dii_daily_net": -3159.9,
+      "fii_daily_net": 7411.41,
+      "dii_daily_net": -1356.57,
       "date": "19 Nov 2026",
       "note": "NSE provisional daily data"
     }
