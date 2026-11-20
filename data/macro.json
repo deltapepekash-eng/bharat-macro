@@ -1,6 +1,6 @@
 {
-  "updated": "2026-11-20T12:00:05Z",
-  "updated_ist": "20 Nov 2026 \u00b7 17:30 IST",
+  "updated": "2026-11-20T18:03:21Z",
+  "updated_ist": "20 Nov 2026 \u00b7 23:33 IST",
   "version": "3.1",
   "indicators": {
     "gdp": {
@@ -217,15 +217,15 @@
       "warning": "US 10Y 5.07% \u2014 FII outflow pressure on India"
     },
     "us_vix": {
-      "value": 24.6,
+      "value": 28.4,
       "unit": "",
       "period": "20 Nov 2026",
       "label": "VIX (US Fear Index)",
       "status": "warn",
       "badge": "ELEVATED",
-      "change": "US VIX: 24.6",
+      "change": "US VIX: 28.4",
       "dir": "fl",
-      "warning": null
+      "warning": "US VIX 28.4 \u2014 risk-off, FII selling likely"
     },
     "us_nfp": {
       "value": 165.0,
@@ -2061,30 +2061,30 @@
   },
   "flows": {
     "date": "20 Nov 2026",
-    "updated": "2026-11-20T12:00:12Z",
+    "updated": "2026-11-20T18:03:28Z",
     "categories": [
       {
         "category": "DII",
-        "buy": 17651.5,
-        "sell": 19008.07,
-        "net": -1356.57
+        "buy": 18492.63,
+        "sell": 23352.43,
+        "net": -4859.8
       },
       {
         "category": "FII/FPI",
-        "buy": 20706.95,
-        "sell": 13295.54,
-        "net": 7411.41
+        "buy": 23596.4,
+        "sell": 13287.98,
+        "net": 10308.42
       }
     ],
-    "fii_buy": 20706.95,
-    "fii_sell": 13295.54,
-    "fii_net": 7411.41,
-    "dii_buy": 17651.5,
-    "dii_sell": 19008.07,
-    "dii_net": -1356.57,
+    "fii_buy": 23596.4,
+    "fii_sell": 13287.98,
+    "fii_net": 10308.42,
+    "dii_buy": 18492.63,
+    "dii_sell": 23352.43,
+    "dii_net": -4859.8,
     "summary": {
-      "fii_daily_net": 7411.41,
-      "dii_daily_net": -1356.57,
+      "fii_daily_net": 10308.42,
+      "dii_daily_net": -4859.8,
       "date": "20 Nov 2026",
       "note": "NSE provisional daily data"
     }
@@ -2113,16 +2113,6 @@
     "JPN": {
       "name": "Japan",
       "value": 1.19,
-      "year": "2025"
-    },
-    "GBR": {
-      "name": "UK",
-      "value": 1.39,
-      "year": "2025"
-    },
-    "WLD": {
-      "name": "World",
-      "value": 2.92,
       "year": "2025"
     }
   },
