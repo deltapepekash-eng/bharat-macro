@@ -1,6 +1,6 @@
 {
-  "updated": "2026-11-26T12:59:40Z",
-  "updated_ist": "26 Nov 2026 \u00b7 18:29 IST",
+  "updated": "2026-11-26T19:18:17Z",
+  "updated_ist": "27 Nov 2026 \u00b7 00:48 IST",
   "version": "3.1",
   "indicators": {
     "gdp": {
@@ -2061,30 +2061,30 @@
   },
   "flows": {
     "date": "26 Nov 2026",
-    "updated": "2026-11-26T12:59:46Z",
+    "updated": "2026-11-26T19:18:25Z",
     "categories": [
       {
         "category": "DII",
-        "buy": 22379.82,
-        "sell": 18361.1,
-        "net": 4018.72
+        "buy": 24352.87,
+        "sell": 18722.15,
+        "net": 5630.72
       },
       {
         "category": "FII/FPI",
-        "buy": 24309.87,
-        "sell": 19830.79,
-        "net": 4479.08
+        "buy": 17879.74,
+        "sell": 12036.41,
+        "net": 5843.33
       }
     ],
-    "fii_buy": 24309.87,
-    "fii_sell": 19830.79,
-    "fii_net": 4479.08,
-    "dii_buy": 22379.82,
-    "dii_sell": 18361.1,
-    "dii_net": 4018.72,
+    "fii_buy": 17879.74,
+    "fii_sell": 12036.41,
+    "fii_net": 5843.33,
+    "dii_buy": 24352.87,
+    "dii_sell": 18722.15,
+    "dii_net": 5630.72,
     "summary": {
-      "fii_daily_net": 4479.08,
-      "dii_daily_net": 4018.72,
+      "fii_daily_net": 5843.33,
+      "dii_daily_net": 5630.72,
       "date": "26 Nov 2026",
       "note": "NSE provisional daily data"
     }
