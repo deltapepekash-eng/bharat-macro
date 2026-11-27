@@ -1,6 +1,6 @@
 {
-  "updated": "2026-11-27T12:56:48Z",
-  "updated_ist": "27 Nov 2026 \u00b7 18:26 IST",
+  "updated": "2026-11-27T19:12:29Z",
+  "updated_ist": "28 Nov 2026 \u00b7 00:42 IST",
   "version": "3.1",
   "indicators": {
     "gdp": {
@@ -217,15 +217,15 @@
       "warning": "US 10Y 4.91% \u2014 FII outflow pressure on India"
     },
     "us_vix": {
-      "value": 26.4,
+      "value": 26.8,
       "unit": "",
       "period": "27 Nov 2026",
       "label": "VIX (US Fear Index)",
       "status": "warn",
       "badge": "ELEVATED",
-      "change": "US VIX: 26.4",
+      "change": "US VIX: 26.8",
       "dir": "fl",
-      "warning": "US VIX 26.4 \u2014 risk-off, FII selling likely"
+      "warning": "US VIX 26.8 \u2014 risk-off, FII selling likely"
     },
     "us_nfp": {
       "value": 165.0,
@@ -2061,7 +2061,7 @@
   },
   "flows": {
     "date": "27 Nov 2026",
-    "updated": "2026-11-27T12:56:53Z",
+    "updated": "2026-11-27T19:12:35Z",
     "categories": [
       {
         "category": "DII",
